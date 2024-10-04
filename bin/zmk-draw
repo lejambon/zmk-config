@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -euo pipefail
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+for km_file in ./config/*.keymap; do
+	km="$(basename ${km_file} | sed 's/\.keymap$//')"
+	echo "${km}"
+
+	yaml="draw/yaml/${km}.yaml"
+	mkdir -p draw/yaml
+	echo "-> ${yaml}"
+	keymap -c draw/config.yaml parse -c 10 -z "${km_file}" > "${yaml}"
+
+	svg="draw/svg/${km}.svg"
+	echo "-> ${svg}"
+	keymap -c draw/config.yaml draw "${yaml}" > "${svg}"
+
+	pdf="draw/pdf/${km}.pdf"
+	mkdir -p draw/pdf
+	echo "-> ${pdf}"
+	cairosvg -f pdf -o "${pdf}" -s 0.6 -d 72 --output-width 595 --output-height 842 "${svg}"
+done

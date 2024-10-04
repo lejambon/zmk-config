@@ -1,0 +1,11 @@
+parse_config:
+  raw_binding_map:
+    "&bootloader": "BOOT"
+    "&bt BT_SEL 0": BT 1
+    "&bt BT_SEL 1": BT 2
+    "&bt BT_SEL 2": BT 3
+    "&bt BT_SEL 3": BT 4
+    "&bt BT_SEL 4": BT 5
+draw_config:
+  append_colon_to_layer_header: false
+  dark_mode: auto

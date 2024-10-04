@@ -1,0 +1,57 @@
+#!/bin/bash
+
+set -euo pipefail
+
+readonly board_default="nice_nano_v2"
+readonly shield_default="cradio_left"
+
+readonly zmk_config_dir="$(realpath $(dirname "${BASH_SOURCE[0]}")/..)"
+readonly zmk_dir="$(realpath ${zmk_config_dir}/../zmk)"
+
+usage() {
+	echo "Usage: $0 <build|flash|update> [-b board] [-s shield]" >&2
+	exit 1
+}
+
+[[ $# -lt 1 ]] && usage
+
+op="$1"
+shift
+
+board="${board_default}"
+shield="${shield_default}"
+while getopts "b:s:" opt; do
+	case "${opt}" in
+		b ) board="${OPTARG}" ;;
+		s ) shield="${OPTARG}" ;;
+		* ) usage ;;
+	esac
+done
+shift $((OPTIND-1))
+[[ $# -gt 0 ]] && usage
+
+case "${op}" in
+	build)
+		cd "${zmk_dir}/app"
+		west build \
+			-b "${board}" \
+			-d "build/${board}/${shield}" \
+			-- \
+			-DSHIELD="${shield}" \
+			-DZMK_CONFIG="${zmk_config_dir}/config"
+		;;
+	flash)
+		cd "${zmk_dir}/app"
+		west flash -H -d "build/${board}/${shield}"
+		;;
+	update)
+		cd "${zmk_dir}"
+		# TODO: SDK
+		pipx upgrade west
+		git pull
+		west update
+		;;
+	*)
+		usage
+		;;
+esac
