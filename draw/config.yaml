@@ -1,11 +1,92 @@
 parse_config:
   raw_binding_map:
-    "&bootloader": "BOOT"
-    "&bt BT_SEL 0": BT 1
-    "&bt BT_SEL 1": BT 2
-    "&bt BT_SEL 2": BT 3
-    "&bt BT_SEL 3": BT 4
-    "&bt BT_SEL 4": BT 5
+    '&bootloader': $$mdi:flash$$
+    '&reset': $$mdi:restart$$
+    '&bt BT_CLR':
+      tap: $$mdi:bluetooth$$
+      shifted: $$mdi:close$$
+      type: sym_sub_text
+    '&bt BT_SEL 0':
+      tap: $$mdi:bluetooth$$
+      shifted: '0'
+      type: sym_sub_text
+    '&bt BT_SEL 1':
+      tap: $$mdi:bluetooth$$
+      shifted: '1'
+      type: sym_sub_text
+    '&bt BT_SEL 2':
+      tap: $$mdi:bluetooth$$
+      shifted: '2'
+      type: sym_sub_text
+  zmk_keycode_map:
+    AMPS: '&'
+    AT: '@'
+    BSLH: \
+    CARET: ^
+    COLON: ':'
+    COMMA: ','
+    DLLR: $
+    DOT: .
+    DQT: '"'
+    EQUAL: '='
+    EXCL: '!'
+    FSLH: /
+    GRAVE: '`'
+    GT: '>'
+    HASH: '#'
+    LBKT: '['
+    LBRC: '{'
+    LPAR: (
+    LT: <
+    MINUS: '-'
+    PIPE: '|'
+    PLUS: +
+    PRCNT: '%'
+    QMARK: '?'
+    RBKT: ']'
+    RBRC: '}'
+    RPAR: )
+    SEMI: ;
+    SQT: ''''
+    STAR: '*'
+    TILDE: '~'
+    UNDER: _
+
+    BSPC: $$mdi:backspace-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+    ENTER: $$mdi:keyboard-return$$
+    SPACE: $$mdi:keyboard-space$$
+    TAB: $$mdi:keyboard-tab$$
+
+    C_POWER: $$mdi:power$$
+    C_SLEEP: $$mdi:power-sleep$$
+
+    UP: $$mdi:arrow-up$$
+    DOWN: $$mdi:arrow-down$$
+    LEFT: $$mdi:arrow-left$$
+    RIGHT: $$mdi:arrow-right$$
+
+    LGUI: $$mdi:apple-keyboard-command$$
+    RGUI: $$mdi:apple-keyboard-command$$
+    LALT: $$mdi:apple-keyboard-option$$
+    RALT: $$mdi:apple-keyboard-option$$
+    LSHFT: $$mdi:apple-keyboard-shift$$
+    RSHFT: $$mdi:apple-keyboard-shift$$
+    LCTRL: $$mdi:apple-keyboard-control$$
+    RCTRL: $$mdi:apple-keyboard-control$$
 draw_config:
   append_colon_to_layer_header: false
   dark_mode: auto
+  glyph_tap_size: 18
+  glyph_hold_size: 15
+  glyph_shifted_size: 15
+  svg_extra_style: |
+    .sym_sub_text.tap {
+      translate: -5px 2px;
+      font-size: 20px;
+    }
+    .sym_sub_text.shifted {
+      translate: 10px 13px;
+      font-size: 16px;
+      opacity: 1.0;
+    }
