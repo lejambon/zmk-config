@@ -58,7 +58,7 @@
         both {
             display-name = "both";
             bindings = <
-                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         xxxxx       xxxxx       xxxxx       xxxxx       BOOT
                 xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                 KP(N3)      xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                                                     xxxxx       _____           _____       xxxxx
