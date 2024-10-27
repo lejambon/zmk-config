@@ -9,7 +9,7 @@ readonly zmk_config_dir="$(realpath $(dirname "${BASH_SOURCE[0]}")/..)"
 readonly zmk_dir="$(realpath ${zmk_config_dir}/../zmk)"
 
 usage() {
-	echo "Usage: $0 <build|flash|update> [-b board] [-s shield]" >&2
+	echo "Usage: $0 <build|flash|update> [-b board] [-n name] [-s shield]" >&2
 	exit 1
 }
 
@@ -20,9 +20,11 @@ shift
 
 board="${board_default}"
 shield="${shield_default}"
-while getopts "b:s:" opt; do
+extra_build_args=()
+while getopts "b:n:s:" opt; do
 	case "${opt}" in
 		b ) board="${OPTARG}" ;;
+		n ) extra_build_args+=("-DCONFIG_ZMK_KEYBOARD_NAME=\"${OPTARG}\"") ;;
 		s ) shield="${OPTARG}" ;;
 		* ) usage ;;
 	esac
@@ -38,11 +40,12 @@ case "${op}" in
 			-d "build/${board}/${shield}" \
 			-- \
 			-DSHIELD="${shield}" \
-			-DZMK_CONFIG="${zmk_config_dir}/config"
+			-DZMK_CONFIG="${zmk_config_dir}/config" \
+			"${extra_build_args[@]}"
 		;;
 	flash)
 		cd "${zmk_dir}/app"
-		west flash -H -d "build/${board}/${shield}"
+		west flash -d "build/${board}/${shield}"
 		;;
 	update)
 		cd "${zmk_dir}"
