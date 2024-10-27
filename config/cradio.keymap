@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define KP(k)       &kp k
-#define HL(a,b,c,d) &mt LCTRL a &mt LALT b &mt LGUI c &mt LSHFT d
-#define HR(a,b,c,d) &mt RSHFT a &mt RGUI b &mt RALT c &mt RCTRL d
+#define HL(a,b,c,d) &hrm LCTRL a &hrm LALT b &hrm LGUI c &hrm LSHFT d
+#define HR(a,b,c,d) &hrm RSHFT a &hrm RGUI b &hrm RALT c &hrm RCTRL d
 #define L1(t)       &lt 1 t
 #define L2(t)       &lt 2 t
 #define BT(c)       &bt BT_##c
@@ -18,6 +18,17 @@
         both {
             if-layers = <1 2>;
             then-layer = <3>;
+        };
+    };
+
+    behaviors {
+        hrm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
         };
     };
 
