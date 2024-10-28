@@ -1,0 +1,9 @@
+parse_config:
+  raw_binding_map:
+    '&kp LG(A)': $$mdi:select-all$$
+    '&kp LG(X)': $$mdi:content-cut$$
+    '&kp LG(C)': $$mdi:content-copy$$
+    '&kp LG(V)': $$mdi:content-paste$$
+    '&kp LG(Z)': $$mdi:undo$$
+    '&kp LG(LS(Z))': $$mdi:redo$$
+  zmk_preamble: '#define KEYMAP_OS_MAC'

@@ -18,6 +18,12 @@ parse_config:
       tap: $$mdi:bluetooth$$
       shifted: '2'
       type: sym_sub_text
+    '&kp LC(A)': $$mdi:select-all$$
+    '&kp LC(X)': $$mdi:content-cut$$
+    '&kp LC(C)': $$mdi:content-copy$$
+    '&kp LC(V)': $$mdi:content-paste$$
+    '&kp LC(Z)': $$mdi:undo$$
+    '&kp LC(LS(Z))': $$mdi:redo$$
   zmk_keycode_map:
     AMPS: '&'
     AT: '@'

@@ -8,17 +8,26 @@ for km_file in ./config/*.keymap; do
 	km="$(basename ${km_file} | sed 's/\.keymap$//')"
 	echo "${km}"
 
-	yaml="draw/yaml/${km}.yaml"
-	mkdir -p draw/yaml
-	echo "-> ${yaml}"
-	keymap -c draw/config.yaml parse -c 10 -z "${km_file}" > "${yaml}"
+	for os in linux mac; do
+		cfg=$(mktemp /tmp/zmk-draw.XXXXXX)
+		if [[ -f draw/config_${os}.yaml ]]; then
+			yq -s '.[0] * .[1]' draw/config.yaml "draw/config_${os}.yaml" > "${cfg}"
+		else
+			cp draw/config.yaml "${cfg}"
+		fi
 
-	svg="draw/svg/${km}.svg"
-	echo "-> ${svg}"
-	keymap -c draw/config.yaml draw "${yaml}" > "${svg}"
+		yaml="draw/yaml/${km}_${os}.yaml"
+		mkdir -p draw/yaml
+		echo "-> ${yaml}"
+		keymap -c "${cfg}" parse -c 10 -z "${km_file}" > "${yaml}"
 
-	pdf="draw/pdf/${km}.pdf"
-	mkdir -p draw/pdf
-	echo "-> ${pdf}"
-	cairosvg -f pdf -o "${pdf}" -s 0.6 -d 72 --output-width 595 --output-height 842 "${svg}"
+		svg="draw/svg/${km}_${os}.svg"
+		echo "-> ${svg}"
+		keymap -c "${cfg}" draw "${yaml}" > "${svg}"
+
+		pdf="draw/pdf/${km}_${os}.pdf"
+		mkdir -p draw/pdf
+		echo "-> ${pdf}"
+		cairosvg -f pdf -o "${pdf}" -s 0.6 -d 72 --output-width 595 --output-height 842 "${svg}"
+	done
 done
