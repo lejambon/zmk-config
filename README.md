@@ -4,32 +4,26 @@
 
 ## Commands
 
-Build left:
+Build:
 
 ```
-./bin/zmk-config build
+zmk-config build choc
+zmk-config build choc right
+zmk-config build mx
+zmk-config build mx right
 ```
 
-Flash left:
+Flash:
 
 ```
-./bin/zmk-config flash
-```
-
-Build right:
-
-```
-./bin/zmk-config build -s cradio_right
-```
-
-Flash right:
-
-```
-./bin/zmk-config flash -s cradio_right
+zmk-config flash choc
+zmk-config flash choc right
+zmk-config flash mx
+zmk-config flash mx right
 ```
 
 Draw:
 
 ```
-./bin/zmk-draw
+zmk-draw
 ```
