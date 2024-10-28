@@ -98,8 +98,8 @@
         right {
             display-name = "right";
             bindings = <
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       KP(UP)      xxxxx       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(LEFT)    KP(DOWN)    KP(RIGHT)   xxxxx
                 KP(N2)      xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                                                     xxxxx       _____           _____       xxxxx
             >;
