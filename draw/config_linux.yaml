@@ -1,0 +1,9 @@
+parse_config:
+  raw_binding_map:
+    '&kp LC(A)': $$mdi:select-all$$
+    '&kp LC(X)': $$mdi:content-cut$$
+    '&kp LC(C)': $$mdi:content-copy$$
+    '&kp LC(V)': $$mdi:content-paste$$
+    '&kp LC(Z)': $$mdi:undo$$
+    '&kp LC(LS(Z))': $$mdi:redo$$
+  zmk_preamble: '#define KEYMAP_OS_LINUX'

@@ -42,6 +42,7 @@ if [[ ${op} == "build" ]] || [[ ${op} == "flash" ]]; then
 				name="Keyboard (MX)"
 				board="nice_nano_v2"
 				shield="cradio_${side}"
+				extra_build_args+=('-DDT_PREPROCESS_EXTRA_CPPFLAGS=-DKEYMAP_OS_LINUX')
 				;;
 		reset)
 				board="nice_nano_v2"

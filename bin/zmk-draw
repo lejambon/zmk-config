@@ -8,13 +8,10 @@ for km_file in ./config/*.keymap; do
 	km="$(basename ${km_file} | sed 's/\.keymap$//')"
 	echo "${km}"
 
-	for os in linux mac; do
+	for os_cfg in draw/config_*.yaml; do
+		os=$(echo "${os_cfg}" | cut -d _ -f 2 | cut -d . -f 1)
 		cfg=$(mktemp /tmp/zmk-draw.XXXXXX)
-		if [[ -f draw/config_${os}.yaml ]]; then
-			yq -s '.[0] * .[1]' draw/config.yaml "draw/config_${os}.yaml" > "${cfg}"
-		else
-			cp draw/config.yaml "${cfg}"
-		fi
+		yq -s '.[0] * .[1]' draw/config.yaml "draw/config_${os}.yaml" > "${cfg}"
 
 		yaml="draw/yaml/${km}_${os}.yaml"
 		mkdir -p draw/yaml

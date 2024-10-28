@@ -16,7 +16,14 @@
 #define _____       &trans
 #define xxxxx       &none
 
-#ifdef KEYMAP_OS_MAC
+#if defined(KEYMAP_OS_LINUX)
+    #define SEL_ALL     &kp LC(A)
+    #define CUT         &kp LC(X)
+    #define COPY        &kp LC(C)
+    #define PASTE       &kp LC(V)
+    #define UNDO        &kp LC(Z)
+    #define REDO        &kp LC(LS(Z))
+#elif defined(KEYMAP_OS_MAC)
     #define SEL_ALL     &kp LG(A)
     #define CUT         &kp LG(X)
     #define COPY        &kp LG(C)
@@ -24,12 +31,7 @@
     #define UNDO        &kp LG(Z)
     #define REDO        &kp LG(LS(Z))
 #else
-    #define SEL_ALL     &kp LC(A)
-    #define CUT         &kp LC(X)
-    #define COPY        &kp LC(C)
-    #define PASTE       &kp LC(V)
-    #define UNDO        &kp LC(Z)
-    #define REDO        &kp LC(LS(Z))
+    #error("KEYMAP_OS_LINUX or KEYMAP_OS_MAC not set")
 #endif
 
 #define QUICK_TAP   175
