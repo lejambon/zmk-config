@@ -87,10 +87,10 @@
         left {
             display-name = "left";
             bindings = <
-                KP(Z)       KP(Q)       UNDO        REDO        xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                SEL_ALL     CUT         COPY        PASTE       xxxxx           xxxxx       KP(RSHFT)   xxxxx       xxxxx       xxxxx
-                KP(N1)      xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                                                    xxxxx       _____           _____       xxxxx
+                KP(Z)       KP(Q)       UNDO        REDO        xxxxx           xxxxx       KP(N7)      KP(N8)      KP(N9)      xxxxx
+                SEL_ALL     CUT         COPY        PASTE       xxxxx           xxxxx       HR(N4,         N5,         N6,      DOT)
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(N1)      KP(N2)      KP(N3)      xxxxx
+                                                    xxxxx       _____           _____       KP(N0)
             >;
         };
 
@@ -100,7 +100,7 @@
             bindings = <
                 xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       KP(UP)      xxxxx       xxxxx
                 xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(LEFT)    KP(DOWN)    KP(RIGHT)   xxxxx
-                KP(N2)      xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                                                     xxxxx       _____           _____       xxxxx
             >;
         };
@@ -108,9 +108,9 @@
         both {
             display-name = "both";
             bindings = <
-                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         xxxxx       xxxxx       xxxxx       xxxxx       BOOT
+                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                 xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                KP(N3)      xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                                                     xxxxx       _____           _____       xxxxx
             >;
         };
