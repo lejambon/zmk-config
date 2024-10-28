@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-readonly board_default="nice_nano_v2"
-readonly shield_default="cradio_left"
-
 readonly zmk_config_dir="$(realpath $(dirname "${BASH_SOURCE[0]}")/..)"
 readonly zmk_dir="$(realpath ${zmk_config_dir}/../zmk)"
 
