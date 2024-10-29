@@ -18,6 +18,12 @@ parse_config:
       tap: $$mdi:bluetooth$$
       shifted: '2'
       type: sym_sub_text
+  zmk_combos:
+    combo_q:
+      key:
+        tap: 'Qu'
+        hold: "Q"
+      type: combo_hold_tap
   zmk_keycode_map:
     AMPS: '&'
     AT: '@'
@@ -76,6 +82,8 @@ parse_config:
     RCTRL: $$mdi:apple-keyboard-control$$
 draw_config:
   append_colon_to_layer_header: false
+  combo_w: 34
+  combo_h: 34
   dark_mode: auto
   glyph_tap_size: 18
   glyph_hold_size: 15
@@ -89,4 +97,13 @@ draw_config:
       translate: 10px 13px;
       font-size: 16px;
       opacity: 1.0;
+    }
+    .combo_hold_tap.tap {
+      translate: 0px -6px;
+    }
+    .combo_hold_tap.hold {
+      translate: 0px -4px;
+    }
+    text.combo.hold {
+      font-size: 11px;
     }

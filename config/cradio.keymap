@@ -69,6 +69,42 @@
     behaviors {
         MAKE_HRM(hrl, KEYS_R KEYS_T)
         MAKE_HRM(hrr, KEYS_L KEYS_T)
+        ht_qu: hold-tap-qu {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP>;
+            bindings = <&kp>, <&macro_qu>;
+        };
+    };
+
+    macros {
+        macro_qu: macro-qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp Q>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp U>
+                ;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_q {
+            timeout-ms = <100>;
+            key-positions = <2 3>;
+            bindings = <&ht_qu Q 0>;
+            layers = <0>;
+        };
+        combo_z {
+            timeout-ms = <100>;
+            key-positions = <1 2>;
+            bindings = <&kp Z>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -87,7 +123,7 @@
         left {
             display-name = "left";
             bindings = <
-                KP(Z)       KP(Q)       UNDO        REDO        xxxxx           xxxxx       KP(N7)      KP(N8)      KP(N9)      xxxxx
+                KP(ESC)     xxxxx       UNDO        REDO        xxxxx           xxxxx       KP(N7)      KP(N8)      KP(N9)      xxxxx
                 SEL_ALL     CUT         COPY        PASTE       xxxxx           xxxxx       HR(N4,         N5,         N6,      DOT)
                 xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(N1)      KP(N2)      KP(N3)      xxxxx
                                                     xxxxx       _____           _____       KP(N0)
