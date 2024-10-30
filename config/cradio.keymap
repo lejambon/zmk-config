@@ -2,6 +2,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define BASE    0
+#define ACTION  1
+#define NUM_NAV 2
+#define FOCUS   3
+#define MOVE    4
+#define SYM     5
+
 #undef CUT
 #undef COPY
 #undef UNDO
@@ -10,9 +17,9 @@
 #define FN(num)     &ht_fn F##num N##num
 #define HL(a,b,c,d) &hrl LCTRL a &hrl LALT b &hrl LGUI c &hrl LSHFT d
 #define HR(a,b,c,d) &hrr RSHFT a &hrr RGUI b &hrr RALT c &hrr RCTRL d
-#define L1(t)       &lt 1 t
-#define L2(t)       &lt 2 t
-#define L3(t)       &lt 3 t
+#define L_A(t)      &lt 1 t
+#define L_N(t)      &lt 2 t
+#define L_F(t)      &lt 3 t
 #define BT(c)       &bt BT_##c
 #define BOOT        &bootloader
 #define VOL_UP      &kp K_VOL_UP
@@ -26,7 +33,7 @@
     #define CUT         &kp LC(X)
     #define COPY        &kp LC(C)
     #define PASTE       &kp LC(V)
-    #define PASTEWF     &kp LC(LS(V))
+    #define SPASTE      &kp LC(LS(V))
     #define UNDO        &kp LC(Z)
     #define REDO        &kp LC(LS(Z))
     #define LOCK        &kp LG(ESC)
@@ -39,6 +46,8 @@
     #define ZOOM_VID    &none
     #define ZOOM_MUTE   &none
     #define TTY_OPEN    &kp LG(ENTER)
+    #define TTY_COPY    &kp LC(LS(C))
+    #define TTY_END     &kp LC(LS(END))
     #define TTY_PGUP    &kp LC(LS(COMMA))
     #define TTY_PGDN    &kp LC(LS(DOT))
     #define TTY_SCROLL  &kp LC(LS(H))
@@ -62,7 +71,7 @@
     #define CUT         &kp LG(X)
     #define COPY        &kp LG(C)
     #define PASTE       &kp LG(V)
-    #define PASTEWF     &kp LG(LS(V))
+    #define SPASTE      &kp LG(LS(V))
     #define UNDO        &kp LG(Z)
     #define REDO        &kp LG(LS(Z))
     #define LOCK        &kp LC(LG(Q))
@@ -75,8 +84,10 @@
     #define ZOOM_VID    &kp LG(LS(S))
     #define ZOOM_MUTE   &kp LG(LS(A))
     #define TTY_OPEN    &kp LC(LA(LS(T)))
-    #define TTY_PGUP    &kp LC(LS(PGUP))
-    #define TTY_PGDN    &kp LC(LS(PGDN))
+    #define TTY_COPY    &kp LC(LS(C))
+    #define TTY_END     &kp LC(LS(END))
+    #define TTY_PGUP    &kp LC(LS(COMMA))
+    #define TTY_PGDN    &kp LC(LS(DOT))
     #define TTY_SCROLL  &kp LC(LS(H))
     #define CH_OPEN     &kp LC(LA(LS(W)))
     #define CH_REOPEN   &kp LG(LS(T))
@@ -124,12 +135,12 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         sym {
-            if-layers = <1 2>;
-            then-layer = <5>;
+            if-layers = <ACTION NUM_NAV>;
+            then-layer = <SYM>;
         };
         wm_move {
-            if-layers = <2 3>;
-            then-layer = <4>;
+            if-layers = <NUM_NAV FOCUS>;
+            then-layer = <MOVE>;
         };
     };
 
@@ -172,14 +183,38 @@
             timeout-ms = <100>;
             key-positions = <2 3>;
             bindings = <&ht_qu Q 0>;
-            layers = <0>;
+            layers = <BASE>;
         };
         combo_z {
             timeout-ms = <100>;
             key-positions = <1 2>;
             bindings = <&kp Z>;
-            layers = <0>;
+            layers = <BASE>;
         };
+/*        combo_blu_0 {
+            timeout-ms = <100>;
+            key-positions = <21 22>;
+            bindings = <&bt BT_SEL 0>;
+            layers = <NUM_NAV>;
+        };
+        combo_blu_1 {
+            timeout-ms = <100>;
+            key-positions = <22 23>;
+            bindings = <&bt BT_SEL 0>;
+            layers = <NUM_NAV>;
+        };
+        combo_blu_2 {
+            timeout-ms = <100>;
+            key-positions = <23 24>;
+            bindings = <&bt BT_SEL 0>;
+            layers = <NUM_NAV>;
+        };
+        combo_blu_clr {
+            timeout-ms = <100>;
+            key-positions = <24 25>;
+            bindings = <&bt BT_CLR>;
+            layers = <NUM_NAV>;
+        };*/
     };
 
     keymap {
@@ -191,7 +226,7 @@
                 KP(J)       KP(G)       KP(M)       KP(P)       KP(V)           KP(GRAVE)   KP(DOT)     KP(FSLH)    KP(TILDE)   KP(DQT)
                 HL(R,          S,          N,          D)       KP(B)           KP(COMMA)   HR(A,          E,          I,          H)
                 KP(X)       KP(F)       KP(L)       KP(C)       KP(W)           KP(MINUS)   KP(U)       KP(O)       KP(Y)       KP(K)
-                                                    L3(TAB)     L1(T)           L2(SPACE)   KP(ENTER)
+                                                    L_F(TAB)    L_A(T)          L_N(SPACE)  KP(ENTER)
             >;
         };
 
@@ -202,57 +237,53 @@
         //wm-move    1 0    1   2+3
         //sym     0 1    1   1+2
 
-        // mac draw
-        // commit
-        // backspace
-        // tab move/look/scroll to other layers?
         // commit
         // flash/test
         // sym
         // shift enter
         // lock/power/sleep
-        // linux tty copy/paste
-        // tty scroll end
+        // bluetooth
         // wm resize
         // wm preset tile
+
         // add kitty to linux+config
         // kitty mac config
         // zoom config
         // open apps config
-        func {
-            display-name = "func";
+        action {
+            display-name = "action";
             bindings = <
-                KP(ESC)     SCRSHOT     UNDO        REDO        TTY_PGUP        TTY_OPEN    CH_OPEN     CH_REOPEN   WIN_CLOSE   CH_INCOG
-                SEL_ALL     CUT         COPY        PASTE       TTY_PGDN        CH_REFRESH  TAB_NEW     TAB_CLOSE   TAB_FL      TAB_FR
-                ZOOM_HAND   ZOOM_VID    ZOOM_MUTE   PASTEWF     TTY_SCROLL      CH_ADDR     CH_BACK     CH_FWD      TAB_ML      TAB_MR
-                                                    _____       _____           _____       xxxxx
+                KP(ESC)     SCRSHOT     UNDO        REDO        ZOOM_HAND       VOL_UP      TTY_OPEN    CH_OPEN     CH_REOPEN   WIN_CLOSE
+                SEL_ALL     CUT         COPY        PASTE       ZOOM_VID        VOL_DN      TAB_NEW     CH_BACK     CH_FWD      CH_ADDR
+                KP(INS)     xxxxx       TTY_COPY    SPASTE      ZOOM_MUTE       MUTE        KP(DEL)     CH_REFRESH  CH_INCOG    TAB_CLOSE
+                                                    _____       _____           _____       KP(BSPC)
             >;
         };
 
         num_nav {
             display-name = "num-nav";
             bindings = <
-                xxxxx       KP(N7)      KP(N8)      KP(N9)      VOL_UP          xxxxx       KP(PG_UP)   KP(UP)      KP(INS)     xxxxx
-                KP(DOT)     KP(N4)      KP(N5)      KP(N6)      VOL_DN          KP(HOME)    KP(LEFT)    KP(DOWN)    KP(RIGHT)   KP(END)
-                xxxxx       KP(N1)      KP(N2)      KP(N3)      MUTE            xxxxx       KP(PG_DN)   xxxxx       KP(DEL)     xxxxx
-                                                    KP(N0)      _____           _____       xxxxx
+                xxxxx       KP(N7)      KP(N8)      KP(N9)      xxxxx           xxxxx       KP(PG_UP)   KP(UP)      TTY_PGUP    xxxxx
+                KP(DOT)     KP(N4)      KP(N5)      KP(N6)      xxxxx           KP(HOME)    KP(LEFT)    KP(DOWN)    KP(RIGHT)   KP(END)
+                xxxxx       KP(N1)      KP(N2)      KP(N3)      xxxxx           xxxxx       KP(PG_DN)   TTY_SCROLL  TTY_PGDN    TTY_END
+                                                    L_F(N0)     _____           _____       xxxxx
             >;
         };
 
-        wm_focus {
-            display-name = "wm-focus";
+        focus {
+            display-name = "focus";
             bindings = <
-                xxxxx       WF(N7)      WF(N8)      WF(N9)      xxxxx           xxxxx       xxxxx       WF(UP)      xxxxx       xxxxx
+                xxxxx       WF(N7)      WF(N8)      WF(N9)      xxxxx           xxxxx       TAB_FL      WF(UP)      TAB_FR      xxxxx
                 xxxxx       WF(N4)      WF(N5)      WF(N6)      xxxxx           xxxxx       WF(LEFT)    WF(DOWN)    WF(RIGHT)   xxxxx
                 xxxxx       WF(N1)      WF(N2)      WF(N3)      xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                                                     _____       xxxxx           _____       xxxxx
             >;
         };
 
-        wm_move {
-            display-name = "wm-move";
+        move {
+            display-name = "move";
             bindings = <
-                xxxxx       WM(N7)      WM(N8)      WM(N9)      xxxxx           xxxxx       xxxxx       WM(UP)      xxxxx       xxxxx
+                xxxxx       WM(N7)      WM(N8)      WM(N9)      xxxxx           xxxxx       TAB_ML      WM(UP)      TAB_MR      xxxxx
                 xxxxx       WM(N4)      WM(N5)      WM(N6)      xxxxx           xxxxx       WM(LEFT)    WM(DOWN)    WM(RIGHT)   xxxxx
                 xxxxx       WM(N1)      WM(N2)      WM(N3)      xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                                                     _____       xxxxx           _____       xxxxx
@@ -265,7 +296,7 @@
             bindings = <
                 BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         LOCK        xxxxx       xxxxx       xxxxx       xxxxx
                 xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           SLEEP       xxxxx       xxxxx       xxxxx       xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           POWER       xxxxx       xxxxx       xxxxx       xxxxx
+                KP(N5)      xxxxx       xxxxx       xxxxx       xxxxx           POWER       xxxxx       xxxxx       xxxxx       xxxxx
                                                     xxxxx       _____           _____       xxxxx
             >;
         };

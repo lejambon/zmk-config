@@ -171,6 +171,10 @@ parse_config:
       tap: $$mdi:console-line$$
       shifted: $$mdi:plus$$
       type: sym_by_sym
+    '&kp LC(LS(C))':
+      tap: $$mdi:console-line$$
+      shifted: $$mdi:content-copy$$
+      type: sym_by_sym
     '&kp LC(LS(COMMA))':
       tap: $$mdi:console-line$$
       shifted: $$mdi:arrow-up$$
@@ -178,6 +182,10 @@ parse_config:
     '&kp LC(LS(DOT))':
       tap: $$mdi:console-line$$
       shifted: $$mdi:arrow-down$$
+      type: sym_by_sym
+    '&kp LC(LS(END))':
+      tap: $$mdi:console-line$$
+      shifted: $$mdi:arrow-collapse-down$$
       type: sym_by_sym
     '&kp LC(LS(H))':
       tap: $$mdi:console-line$$
