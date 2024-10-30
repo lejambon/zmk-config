@@ -5,5 +5,8 @@ parse_config:
     '&kp LG(C)': $$mdi:content-copy$$
     '&kp LG(V)': $$mdi:content-paste$$
     '&kp LG(Z)': $$mdi:undo$$
-    '&kp LG(LS(Z))': $$mdi:redo$$
+    '&kp LG(LS(Z))': $$mdi:redo$$  
+    '&kp LC(LG(Q))': $$mdi:lock-outline$$
+    '&kp LA(LG(K_PWR))': $$mdi:power-sleep$$
+    '&kp LC(LA(LG(K_PWR)))': $$mdi:power$$
   zmk_preamble: '#define KEYMAP_OS_MAC'

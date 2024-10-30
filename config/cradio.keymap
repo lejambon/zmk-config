@@ -7,29 +7,41 @@
 #undef UNDO
 
 #define KP(k)       &kp k
+#define FN(num)     &ht_fn F##num N##num
 #define HL(a,b,c,d) &hrl LCTRL a &hrl LALT b &hrl LGUI c &hrl LSHFT d
 #define HR(a,b,c,d) &hrr RSHFT a &hrr RGUI b &hrr RALT c &hrr RCTRL d
 #define L1(t)       &lt 1 t
 #define L2(t)       &lt 2 t
 #define BT(c)       &bt BT_##c
 #define BOOT        &bootloader
+#define VOL_UP      &kp K_VOL_UP
+#define VOL_DN      &kp K_VOL_DN
+#define MUTE        &kp K_MUTE
 #define _____       &trans
 #define xxxxx       &none
 
 #if defined(KEYMAP_OS_LINUX)
-    #define SEL_ALL     &kp LC(A)
-    #define CUT         &kp LC(X)
-    #define COPY        &kp LC(C)
-    #define PASTE       &kp LC(V)
+    #define SEL_ALL     LC(A)
+    #define CUT         LC(X)
+    #define COPY        LC(C)
+    #define PASTE       LC(V)
+    #define PASTEWF     &kp LC(LS(V))
     #define UNDO        &kp LC(Z)
     #define REDO        &kp LC(LS(Z))
+    #define LOCK        &kp LG(ESC)
+    #define SLEEP       &kp LG(LS(S))
+    #define POWER       &kp LG(LS(P))
 #elif defined(KEYMAP_OS_MAC)
-    #define SEL_ALL     &kp LG(A)
-    #define CUT         &kp LG(X)
-    #define COPY        &kp LG(C)
-    #define PASTE       &kp LG(V)
+    #define SEL_ALL     LG(A)
+    #define CUT         LG(X)
+    #define COPY        LG(C)
+    #define PASTE       LG(V)
+    #define PASTEWF     &kp LG(LS(V))
     #define UNDO        &kp LG(Z)
     #define REDO        &kp LG(LS(Z))
+    #define LOCK        &kp LC(LG(Q))
+    #define SLEEP       &kp LA(LG(K_PWR))
+    #define POWER       &kp LC(LA(LG(K_PWR)))
 #else
     #error("KEYMAP_OS_LINUX or KEYMAP_OS_MAC not set")
 #endif
@@ -77,6 +89,14 @@
             quick-tap-ms = <QUICK_TAP>;
             bindings = <&kp>, <&macro_qu>;
         };
+        ht_fn: hold-tap-fn {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <QUICK_TAP>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     macros {
@@ -119,34 +139,38 @@
                                                     KP(BSPC)    L1(T)           L2(SPACE)   KP(ENTER)
             >;
         };
-
+        // !"£$%^&*()[]{}<>-=_+;:'@#~\|`,./?
+        // !" $%^&*( [ { < -=_+;:'@#~ |`,./?
+        //
+        // !" $%^&*( [ { < -=_+;:'@#~ |`,./?
+        // !" $%^&*( [ { < -=_+;:'@#~ |`,./?
+        // !" $%^&*( [ { < -=_+;:'@#~ |`,./?
         left {
             display-name = "left";
             bindings = <
                 KP(ESC)     xxxxx       UNDO        REDO        xxxxx           xxxxx       KP(N7)      KP(N8)      KP(N9)      xxxxx
-                SEL_ALL     CUT         COPY        PASTE       xxxxx           xxxxx       HR(N4,         N5,         N6,      DOT)
+                HL(SEL_ALL, CUT,        COPY,       PASTE)      PASTEWF         KP(DOT)     KP(N4)      KP(N5)      KP(N6)      xxxxx
                 xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(N1)      KP(N2)      KP(N3)      xxxxx
                                                     xxxxx       _____           _____       KP(N0)
             >;
         };
 
-
         right {
             display-name = "right";
             bindings = <
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       KP(UP)      xxxxx       xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(LEFT)    KP(DOWN)    KP(RIGHT)   xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                                                    xxxxx       _____           _____       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(PG_UP)   KP(UP)      KP(INS)     xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           KP(HOME)    KP(LEFT)    KP(DOWN)    KP(RIGHT)   KP(END)
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(PG_DN)   xxxxx       KP(DEL)     xxxxx
+                                                    KP(TAB)     _____           _____       xxxxx
             >;
         };
 
         both {
             display-name = "both";
             bindings = <
-                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         LOCK        KP(F7)      KP(F8)      KP(F9)      KP(F10)
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           SLEEP       KP(F4)      KP(F5)      KP(F6)      KP(F11)
+                xxxxx       VOL_DN      VOL_UP      MUTE        xxxxx           POWER       KP(F1)      KP(F2)      KP(F3)      KP(F12)
                                                     xxxxx       _____           _____       xxxxx
             >;
         };

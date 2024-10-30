@@ -64,13 +64,21 @@ parse_config:
     SPACE: $$mdi:keyboard-space$$
     TAB: $$mdi:keyboard-tab$$
 
-    C_POWER: $$mdi:power$$
-    C_SLEEP: $$mdi:power-sleep$$
-
+    PG_UP: 'PgUp'
+    PG_DN: 'PgDn'
+    HOME: 'Home'
+    END: 'End'
+    INS: 'Ins'
+    ESC: 'Esc'
+    
     UP: $$mdi:arrow-up$$
     DOWN: $$mdi:arrow-down$$
     LEFT: $$mdi:arrow-left$$
     RIGHT: $$mdi:arrow-right$$
+
+    K_MUTE: $$mdi:volume-off$$
+    K_VOL_UP: $$mdi:volume-high$$
+    K_VOL_DN: $$mdi:volume-low$$
 
     LGUI: $$mdi:apple-keyboard-command$$
     RGUI: $$mdi:apple-keyboard-command$$

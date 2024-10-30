@@ -6,4 +6,7 @@ parse_config:
     '&kp LC(V)': $$mdi:content-paste$$
     '&kp LC(Z)': $$mdi:undo$$
     '&kp LC(LS(Z))': $$mdi:redo$$
+    '&kp LG(ESC)': $$mdi:lock-outline$$
+    '&kp LG(LS(S))': $$mdi:power-sleep$$
+    '&kp LG(LS(P))': $$mdi:power$$
   zmk_preamble: '#define KEYMAP_OS_LINUX'
