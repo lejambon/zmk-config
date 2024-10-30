@@ -12,6 +12,7 @@
 #define HR(a,b,c,d) &hrr RSHFT a &hrr RGUI b &hrr RALT c &hrr RCTRL d
 #define L1(t)       &lt 1 t
 #define L2(t)       &lt 2 t
+#define L3(t)       &lt 3 t
 #define BT(c)       &bt BT_##c
 #define BOOT        &bootloader
 #define VOL_UP      &kp K_VOL_UP
@@ -21,27 +22,77 @@
 #define xxxxx       &none
 
 #if defined(KEYMAP_OS_LINUX)
-    #define SEL_ALL     LC(A)
-    #define CUT         LC(X)
-    #define COPY        LC(C)
-    #define PASTE       LC(V)
+    #define SEL_ALL     &kp LC(A)
+    #define CUT         &kp LC(X)
+    #define COPY        &kp LC(C)
+    #define PASTE       &kp LC(V)
     #define PASTEWF     &kp LC(LS(V))
     #define UNDO        &kp LC(Z)
     #define REDO        &kp LC(LS(Z))
     #define LOCK        &kp LG(ESC)
     #define SLEEP       &kp LG(LS(S))
     #define POWER       &kp LG(LS(P))
+    #define WF(k)       &kp LG(k)
+    #define WM(k)       &kp LG(LS(k))
+    #define SCRSHOT     &kp PSCRN
+    #define ZOOM_HAND   &none
+    #define ZOOM_VID    &none
+    #define ZOOM_MUTE   &none
+    #define TTY_OPEN    &kp LG(ENTER)
+    #define TTY_PGUP    &kp LC(LS(COMMA))
+    #define TTY_PGDN    &kp LC(LS(DOT))
+    #define TTY_SCROLL  &kp LC(LS(H))
+    #define CH_OPEN     &kp LG(LS(ENTER))
+    #define CH_REOPEN   &kp LC(LS(T))
+    #define CH_INCOG    &kp LC(LS(N))
+    #define CH_REFRESH  &kp LC(LS(R))
+    #define CH_ADDR     &kp LC(I)
+    #define CH_FWD      &kp LA(RIGHT)
+    #define CH_BACK     &kp LA(LEFT)
+    #define WIN_CLOSE   &kp LG(LS(Q))
+    #define TAB_NEW     &kp LC(T)
+    #define TAB_CLOSE   &kp LC(F4)
+    #define TAB_FL      &kp LC(PGUP)
+    #define TAB_FR      &kp LC(PGDN)
+    #define TAB_ML      &kp LC(LS(PGUP))
+    #define TAB_MR      &kp LC(LS(PGDN))
+
 #elif defined(KEYMAP_OS_MAC)
-    #define SEL_ALL     LG(A)
-    #define CUT         LG(X)
-    #define COPY        LG(C)
-    #define PASTE       LG(V)
+    #define SEL_ALL     &kp LG(A)
+    #define CUT         &kp LG(X)
+    #define COPY        &kp LG(C)
+    #define PASTE       &kp LG(V)
     #define PASTEWF     &kp LG(LS(V))
     #define UNDO        &kp LG(Z)
     #define REDO        &kp LG(LS(Z))
     #define LOCK        &kp LC(LG(Q))
     #define SLEEP       &kp LA(LG(K_PWR))
     #define POWER       &kp LC(LA(LG(K_PWR)))
+    #define WF(k)       &kp LA(k)
+    #define WM(k)       &kp LA(LS(k))
+    #define SCRSHOT     &kp PSCRN
+    #define ZOOM_HAND   &kp LA(Y)
+    #define ZOOM_VID    &kp LG(LS(V))
+    #define ZOOM_MUTE   &kp LG(LS(A))
+    #define TTY_OPEN    &kp
+    #define TTY_PGUP    &kp LC(LS(PGUP))
+    #define TTY_PGDN    &kp LC(LS(PGDN))
+    #define TTY_SCROLL  &kp LC(LS(H))
+    #define CH_OPEN     &kp
+    #define CH_REOPEN   &kp LG(LS(T))
+    #define CH_INCOG    &kp LG(LS(N))
+    #define CH_REFRESH  &kp LG(LS(R))
+    #define CH_ADDR     &kp LG(I)
+    #define CH_FWD      &kp LG(RIGHT)
+    #define CH_BACK     &kp LG(LEFT)
+    #define WIN_CLOSE   &kp LG(W)
+    #define TAB_NEW     &kp LG(T)
+    #define TAB_CLOSE   &kp LG(W)
+    #define TAB_FL      &kp LG(LA(RIGHT))
+    #define TAB_FR      &kp LG(LA(LEFT))
+    #define TAB_ML      &kp LC(LS(PGUP))
+    #define TAB_MR      &kp LC(LS(PGDN))
+
 #else
     #error("KEYMAP_OS_LINUX or KEYMAP_OS_MAC not set")
 #endif
@@ -72,9 +123,13 @@
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        both {
+        sym {
             if-layers = <1 2>;
-            then-layer = <3>;
+            then-layer = <5>;
+        };
+        wm_move {
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 
@@ -133,44 +188,84 @@
         base {
             display-name = "base";
             bindings = <
-                KP(J)       KP(G)       KP(M)       KP(P)       KP(V)           KP(SEMI)    KP(DOT)     KP(FSLH)    KP(SQT)     KP(DQT)
+                KP(J)       KP(G)       KP(M)       KP(P)       KP(V)           KP(GRAVE)   KP(DOT)     KP(FSLH)    KP(TILDE)   KP(DQT)
                 HL(R,          S,          N,          D)       KP(B)           KP(COMMA)   HR(A,          E,          I,          H)
                 KP(X)       KP(F)       KP(L)       KP(C)       KP(W)           KP(MINUS)   KP(U)       KP(O)       KP(Y)       KP(K)
-                                                    KP(BSPC)    L1(T)           L2(SPACE)   KP(ENTER)
+                                                    L3(TAB)     L1(T)           L2(SPACE)   KP(ENTER)
             >;
         };
+
+        //base    0 0    0   0
+        //func     0 1    0   1
+        //num/nav 0 0    1   2
+        //wm-focus   1 0    0   3
+        //wm-move    1 0    1   2+3
+        //sym     0 1    1   1+2
+
+        // mac draw
+        // commit
+        // backspace
+        // tab move/look/scroll to other layers?
+        // commit
+        // flash/test
+        // sym
+        // shift enter
+        // lock/power/sleep
+        // linux tty copy/paste
+        // tty scroll end
+        // wm resize
+        // wm preset tile
+        // add kitty to linux+config
+        // kitty mac config
+        // zoom config
+        // open apps config
+        func {
+            display-name = "func";
+            bindings = <
+                KP(ESC)     SCRSHOT     UNDO        REDO        TTY_PGUP        TTY_OPEN    CH_OPEN     CH_REOPEN   WIN_CLOSE   CH_INCOG
+                SEL_ALL     CUT         COPY        PASTE       TTY_PGDN        CH_REFRESH  TAB_NEW     TAB_CLOSE   TAB_FL      TAB_FR
+                ZOOM_HAND   ZOOM_VID    ZOOM_MUTE   PASTEWF     TTY_SCROLL      CH_ADDR     CH_BACK     CH_FWD      TAB_ML      TAB_MR
+                                                    _____       _____           _____       xxxxx
+            >;
+        };
+
+        num_nav {
+            display-name = "num-nav";
+            bindings = <
+                xxxxx       KP(N7)      KP(N8)      KP(N9)      VOL_UP          xxxxx       KP(PG_UP)   KP(UP)      KP(INS)     xxxxx
+                KP(DOT)     KP(N4)      KP(N5)      KP(N6)      VOL_DN          KP(HOME)    KP(LEFT)    KP(DOWN)    KP(RIGHT)   KP(END)
+                xxxxx       KP(N1)      KP(N2)      KP(N3)      MUTE            xxxxx       KP(PG_DN)   xxxxx       KP(DEL)     xxxxx
+                                                    KP(N0)      _____           _____       xxxxx
+            >;
+        };
+
+        wm_focus {
+            display-name = "wm-focus";
+            bindings = <
+                xxxxx       WF(N7)      WF(N8)      WF(N9)      xxxxx           xxxxx       xxxxx       WF(UP)      xxxxx       xxxxx
+                xxxxx       WF(N4)      WF(N5)      WF(N6)      xxxxx           xxxxx       WF(LEFT)    WF(DOWN)    WF(RIGHT)   xxxxx
+                xxxxx       WF(N1)      WF(N2)      WF(N3)      xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                                                    _____       xxxxx           _____       xxxxx
+            >;
+        };
+
+        wm_move {
+            display-name = "wm-move";
+            bindings = <
+                xxxxx       WM(N7)      WM(N8)      WM(N9)      xxxxx           xxxxx       xxxxx       WM(UP)      xxxxx       xxxxx
+                xxxxx       WM(N4)      WM(N5)      WM(N6)      xxxxx           xxxxx       WM(LEFT)    WM(DOWN)    WM(RIGHT)   xxxxx
+                xxxxx       WM(N1)      WM(N2)      WM(N3)      xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                                                    _____       xxxxx           _____       xxxxx
+            >;
+        };
+
         // !"£$%^&*()[]{}<>-=_+;:'@#~\|`,./?
-        // !" $%^&*( [ { < -=_+;:'@#~ |`,./?
-        //
-        // !" $%^&*( [ { < -=_+;:'@#~ |`,./?
-        // !" $%^&*( [ { < -=_+;:'@#~ |`,./?
-        // !" $%^&*( [ { < -=_+;:'@#~ |`,./?
-        left {
-            display-name = "left";
+        sym {
+            display-name = "sym";
             bindings = <
-                KP(ESC)     xxxxx       UNDO        REDO        xxxxx           xxxxx       KP(N7)      KP(N8)      KP(N9)      xxxxx
-                HL(SEL_ALL, CUT,        COPY,       PASTE)      PASTEWF         KP(DOT)     KP(N4)      KP(N5)      KP(N6)      xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(N1)      KP(N2)      KP(N3)      xxxxx
-                                                    xxxxx       _____           _____       KP(N0)
-            >;
-        };
-
-        right {
-            display-name = "right";
-            bindings = <
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(PG_UP)   KP(UP)      KP(INS)     xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           KP(HOME)    KP(LEFT)    KP(DOWN)    KP(RIGHT)   KP(END)
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       KP(PG_DN)   xxxxx       KP(DEL)     xxxxx
-                                                    KP(TAB)     _____           _____       xxxxx
-            >;
-        };
-
-        both {
-            display-name = "both";
-            bindings = <
-                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         LOCK        KP(F7)      KP(F8)      KP(F9)      KP(F10)
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           SLEEP       KP(F4)      KP(F5)      KP(F6)      KP(F11)
-                xxxxx       VOL_DN      VOL_UP      MUTE        xxxxx           POWER       KP(F1)      KP(F2)      KP(F3)      KP(F12)
+                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         LOCK        xxxxx       xxxxx       xxxxx       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           SLEEP       xxxxx       xxxxx       xxxxx       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           POWER       xxxxx       xxxxx       xxxxx       xxxxx
                                                     xxxxx       _____           _____       xxxxx
             >;
         };

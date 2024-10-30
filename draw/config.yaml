@@ -76,6 +76,8 @@ parse_config:
     LEFT: $$mdi:arrow-left$$
     RIGHT: $$mdi:arrow-right$$
 
+    PSCRN: $$mdi:monitor-screenshot$$
+
     K_MUTE: $$mdi:volume-off$$
     K_VOL_UP: $$mdi:volume-high$$
     K_VOL_DN: $$mdi:volume-low$$
@@ -104,6 +106,13 @@ draw_config:
     .sym_sub_text.shifted {
       translate: 10px 13px;
       font-size: 16px;
+      opacity: 1.0;
+    }
+    .sym_by_sym.tap {
+      translate: -6px 0px;
+    }
+    .sym_by_sym.shifted {
+      translate: 10px 12px;
       opacity: 1.0;
     }
     .combo_hold_tap.tap {
