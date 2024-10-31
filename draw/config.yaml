@@ -5,26 +5,31 @@ parse_config:
     '&bt BT_CLR':
       tap: $$mdi:bluetooth$$
       shifted: 'x' # $$mdi:close$$
-      type: combo_sym_by_sym
+      type: combo_side_by_side
     '&bt BT_SEL 0':
       tap: $$mdi:bluetooth$$
       shifted: '0'
-      type: combo_sym_by_sym
+      type: combo_side_by_side
     '&bt BT_SEL 1':
       tap: $$mdi:bluetooth$$
       shifted: '1'
-      type: combo_sym_by_sym
+      type: combo_side_by_side
     '&bt BT_SEL 2':
       tap: $$mdi:bluetooth$$
       shifted: '2'
-      type: combo_sym_by_sym
+      type: combo_side_by_side
+    '&kp LS(ENTER)':
+      tap: $$mdi:apple-keyboard-shift$$
+      shifted: $$mdi:keyboard-return$$
+      type: side_by_side
   zmk_combos:
     combo_q:
       key:
         tap: 'Q'
-        #tap: 'Qu'
-        #hold: "Q"
-      #type: combo_hold_tap
+    combo_dot_dot_slash:
+      key:
+        tap: '../'
+      type: combo_small
     combo_boot_l:
       align: left
     combo_boot_r:
@@ -43,13 +48,10 @@ parse_config:
       offset: -0.02
     combo_power:
       align: right
-      #offset: -0.02
     combo_sleep:
       align: right
-      #offset: -0.02
     combo_lock:
       align: right
-      #offset: -0.02
   zmk_keycode_map:
     AMPS: '&'
     AT: '@'
@@ -125,20 +127,12 @@ draw_config:
   glyph_hold_size: 15
   glyph_shifted_size: 15
   svg_extra_style: |
-    .sym_sub_text.tap {
-      translate: -5px 2px;
-      font-size: 20px;
+    .side_by_side.tap {
+      translate: -9px 0px;
     }
-    .sym_sub_text.shifted {
-      translate: 10px 13px;
+    .side_by_side.shifted {
+      translate: 10px 17px;
       font-size: 16px;
-    }
-
-    .sym_by_sym.tap {
-      translate: -6px 0px;
-    }
-    .sym_by_sym.shifted {
-      translate: 10px 12px;
     }
 
     /* home row */
@@ -162,14 +156,19 @@ draw_config:
       font-size: 16px;
     }
 
+    /* ../ */
+    text.combo.combo_small.tap {
+      font-size: 10px;
+    }
+
     /* bluetooth */
-    .combo_sym_by_sym.tap {
+    .combo_side_by_side.tap {
       translate: -3px 0px;
     }
-    .combo_sym_by_sym.shifted {
+    .combo_side_by_side.shifted {
       translate: 5px 2px;
     }
-    text.combo.combo_sym_by_sym.shifted {
+    text.combo.combo_side_by_side.shifted {
       font-size: 14px;
     }
 

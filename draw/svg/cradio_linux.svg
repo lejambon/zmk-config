@@ -270,20 +270,12 @@ text.trans { fill: #7e8184; }
 path.combo { stroke: #7f7f7f; }
 
 }
-.sym_sub_text.tap {
-  translate: -5px 2px;
-  font-size: 20px;
+.side_by_side.tap {
+  translate: -9px 0px;
 }
-.sym_sub_text.shifted {
-  translate: 10px 13px;
+.side_by_side.shifted {
+  translate: 10px 17px;
   font-size: 16px;
-}
-
-.sym_by_sym.tap {
-  translate: -6px 0px;
-}
-.sym_by_sym.shifted {
-  translate: 10px 12px;
 }
 
 /* home row */
@@ -307,14 +299,19 @@ text.combo.tap {
   font-size: 16px;
 }
 
+/* ../ */
+text.combo.combo_small.tap {
+  font-size: 10px;
+}
+
 /* bluetooth */
-.combo_sym_by_sym.tap {
+.combo_side_by_side.tap {
   translate: -3px 0px;
 }
-.combo_sym_by_sym.shifted {
+.combo_side_by_side.shifted {
   translate: 5px 2px;
 }
-text.combo.combo_sym_by_sym.shifted {
+text.combo.combo_side_by_side.shifted {
   font-size: 14px;
 }
 
@@ -353,7 +350,7 @@ path.combo {
 </g>
 <g transform="translate(420, 52)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">`</text>
+<text x="0" y="0" class="key tap">@</text>
 </g>
 <g transform="translate(476, 44)" class="key keypos-6">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -365,11 +362,11 @@ path.combo {
 </g>
 <g transform="translate(588, 46)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">~</text>
+<text x="0" y="0" class="key tap">&quot;</text>
 </g>
 <g transform="translate(644, 81)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">&quot;</text>
+<text x="0" y="0" class="key tap">`</text>
 </g>
 <g transform="translate(28, 137)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -489,13 +486,17 @@ path.combo {
 <rect rx="6" ry="6" x="102" y="27" width="20" height="20" class="combo"/>
 <text x="112" y="37" class="combo tap">Z</text>
 </g>
-<g class="combo combopos-2">
+<g class="combo combo_small combopos-2">
+<rect rx="6" ry="6" x="494" y="26" width="20" height="20" class="combo combo_small"/>
+<text x="504" y="36" class="combo combo_small tap">../</text>
+</g>
+<g class="combo combopos-3">
 <path d="M-1,137 v-50 a6.0,6.0 0 0 1 6.0,-6.0 h4" class="combo"/>
 <path d="M-1,137 v50 a6.0,6.0 0 0 0 6.0,6.0 h4" class="combo"/>
 <rect rx="6" ry="6" x="-11" y="127" width="20" height="20" class="combo"/>
 <use href="#mdi:flash" xlink:href="#mdi:flash" x="-10" y="128" height="18" width="18.0" class="combo tap glyph mdi:flash"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M673,137 v-50 a6.0,6.0 0 0 0 -6.0,-6.0 h-4" class="combo"/>
 <path d="M673,137 v50 a6.0,6.0 0 0 1 -6.0,6.0 h-4" class="combo"/>
 <rect rx="6" ry="6" x="663" y="127" width="20" height="20" class="combo"/>
@@ -529,25 +530,25 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:volume-high" xlink:href="#mdi:volume-high" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:volume-high"/>
 </g>
-<g transform="translate(476, 44)" class="key sym_by_sym keypos-6">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:console-line"/>
-<use href="#mdi:plus" xlink:href="#mdi:plus" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:plus"/>
+<g transform="translate(476, 44)" class="key side_by_side keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:console-line"/>
+<use href="#mdi:plus" xlink:href="#mdi:plus" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:plus"/>
 </g>
-<g transform="translate(532, 28)" class="key sym_by_sym keypos-7">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:google-chrome"/>
-<use href="#mdi:plus" xlink:href="#mdi:plus" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:plus"/>
+<g transform="translate(532, 28)" class="key side_by_side keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:google-chrome"/>
+<use href="#mdi:plus" xlink:href="#mdi:plus" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:plus"/>
 </g>
-<g transform="translate(588, 46)" class="key sym_by_sym keypos-8">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:tab"/>
-<use href="#mdi:undo" xlink:href="#mdi:undo" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:undo"/>
+<g transform="translate(588, 46)" class="key side_by_side keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:tab"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:undo"/>
 </g>
-<g transform="translate(644, 81)" class="key sym_by_sym keypos-9">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:application-outline"/>
-<use href="#mdi:close" xlink:href="#mdi:close" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:close"/>
+<g transform="translate(644, 81)" class="key side_by_side keypos-9">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<use href="#mdi:close" xlink:href="#mdi:close" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:close"/>
 </g>
 <g transform="translate(28, 137)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -576,20 +577,20 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:tab-plus" xlink:href="#mdi:tab-plus" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:tab-plus"/>
 </g>
-<g transform="translate(532, 84)" class="key sym_by_sym keypos-17">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:google-chrome"/>
-<use href="#mdi:step-backward" xlink:href="#mdi:step-backward" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:step-backward"/>
+<g transform="translate(532, 84)" class="key side_by_side keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:google-chrome"/>
+<use href="#mdi:step-backward" xlink:href="#mdi:step-backward" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:step-backward"/>
 </g>
-<g transform="translate(588, 102)" class="key sym_by_sym keypos-18">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:google-chrome"/>
-<use href="#mdi:step-forward" xlink:href="#mdi:step-forward" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:step-forward"/>
+<g transform="translate(588, 102)" class="key side_by_side keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:google-chrome"/>
+<use href="#mdi:step-forward" xlink:href="#mdi:step-forward" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:step-forward"/>
 </g>
-<g transform="translate(644, 137)" class="key sym_by_sym keypos-19">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:google-chrome"/>
-<use href="#mdi:cloud-search-outline" xlink:href="#mdi:cloud-search-outline" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:cloud-search-outline"/>
+<g transform="translate(644, 137)" class="key side_by_side keypos-19">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:google-chrome"/>
+<use href="#mdi:cloud-search-outline" xlink:href="#mdi:cloud-search-outline" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:cloud-search-outline"/>
 </g>
 <g transform="translate(28, 193)" class="key keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -598,15 +599,15 @@ path.combo {
 <g transform="translate(84, 158)" class="key keypos-21">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(140, 140)" class="key sym_by_sym keypos-22">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:console-line"/>
-<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:content-copy"/>
+<g transform="translate(140, 140)" class="key side_by_side keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:console-line"/>
+<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:content-copy"/>
 </g>
-<g transform="translate(196, 156)" class="key sym_by_sym keypos-23">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:content-paste"/>
-<use href="#mdi:star" xlink:href="#mdi:star" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:star"/>
+<g transform="translate(196, 156)" class="key side_by_side keypos-23">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:content-paste"/>
+<use href="#mdi:star" xlink:href="#mdi:star" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:star"/>
 </g>
 <g transform="translate(252, 164)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -619,15 +620,15 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:backspace-reverse-outline"/>
 </g>
-<g transform="translate(532, 140)" class="key sym_by_sym keypos-27">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:google-chrome"/>
-<use href="#mdi:reload" xlink:href="#mdi:reload" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:reload"/>
+<g transform="translate(532, 140)" class="key side_by_side keypos-27">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:google-chrome"/>
+<use href="#mdi:reload" xlink:href="#mdi:reload" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:reload"/>
 </g>
-<g transform="translate(588, 158)" class="key sym_by_sym keypos-28">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:google-chrome"/>
-<use href="#mdi:incognito" xlink:href="#mdi:incognito" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:incognito"/>
+<g transform="translate(588, 158)" class="key side_by_side keypos-28">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:google-chrome" xlink:href="#mdi:google-chrome" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:google-chrome"/>
+<use href="#mdi:incognito" xlink:href="#mdi:incognito" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:incognito"/>
 </g>
 <g transform="translate(644, 193)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -648,33 +649,33 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:backspace-outline" xlink:href="#mdi:backspace-outline" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:backspace-outline"/>
 </g>
-<g class="combo combo_sym_by_sym combopos-0">
+<g class="combo combo_side_by_side combopos-0">
 <path d="M56,102 v-50 a6.0,6.0 0 0 1 6.0,-6.0 h3" class="combo"/>
 <path d="M56,102 v50 a6.0,6.0 0 0 0 6.0,6.0 h3" class="combo"/>
-<rect rx="6" ry="6" x="46" y="92" width="20" height="20" class="combo combo_sym_by_sym"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="47" y="93" height="18" width="18.0" class="combo combo_sym_by_sym tap glyph mdi:bluetooth"/>
-<text x="56" y="94" class="combo combo_sym_by_sym shifted">0</text>
+<rect rx="6" ry="6" x="46" y="92" width="20" height="20" class="combo combo_side_by_side"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="47" y="93" height="18" width="18.0" class="combo combo_side_by_side tap glyph mdi:bluetooth"/>
+<text x="56" y="94" class="combo combo_side_by_side shifted">0</text>
 </g>
-<g class="combo combo_sym_by_sym combopos-1">
+<g class="combo combo_side_by_side combopos-1">
 <path d="M112,84 v-50 a6.0,6.0 0 0 1 6.0,-6.0 h3" class="combo"/>
 <path d="M112,84 v50 a6.0,6.0 0 0 0 6.0,6.0 h3" class="combo"/>
-<rect rx="6" ry="6" x="102" y="74" width="20" height="20" class="combo combo_sym_by_sym"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="103" y="75" height="18" width="18.0" class="combo combo_sym_by_sym tap glyph mdi:bluetooth"/>
-<text x="112" y="76" class="combo combo_sym_by_sym shifted">1</text>
+<rect rx="6" ry="6" x="102" y="74" width="20" height="20" class="combo combo_side_by_side"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="103" y="75" height="18" width="18.0" class="combo combo_side_by_side tap glyph mdi:bluetooth"/>
+<text x="112" y="76" class="combo combo_side_by_side shifted">1</text>
 </g>
-<g class="combo combo_sym_by_sym combopos-2">
+<g class="combo combo_side_by_side combopos-2">
 <path d="M168,100 v-50 a6.0,6.0 0 0 1 6.0,-6.0 h3" class="combo"/>
 <path d="M168,100 v50 a6.0,6.0 0 0 0 6.0,6.0 h3" class="combo"/>
-<rect rx="6" ry="6" x="158" y="90" width="20" height="20" class="combo combo_sym_by_sym"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="159" y="91" height="18" width="18.0" class="combo combo_sym_by_sym tap glyph mdi:bluetooth"/>
-<text x="168" y="92" class="combo combo_sym_by_sym shifted">2</text>
+<rect rx="6" ry="6" x="158" y="90" width="20" height="20" class="combo combo_side_by_side"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="159" y="91" height="18" width="18.0" class="combo combo_side_by_side tap glyph mdi:bluetooth"/>
+<text x="168" y="92" class="combo combo_side_by_side shifted">2</text>
 </g>
-<g class="combo combo_sym_by_sym combopos-3">
+<g class="combo combo_side_by_side combopos-3">
 <path d="M224,108 v-50 a6.0,6.0 0 0 1 6.0,-6.0 h3" class="combo"/>
 <path d="M224,108 v50 a6.0,6.0 0 0 0 6.0,6.0 h3" class="combo"/>
-<rect rx="6" ry="6" x="214" y="98" width="20" height="20" class="combo combo_sym_by_sym"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="215" y="99" height="18" width="18.0" class="combo combo_sym_by_sym tap glyph mdi:bluetooth"/>
-<text x="224" y="100" class="combo combo_sym_by_sym shifted">x</text>
+<rect rx="6" ry="6" x="214" y="98" width="20" height="20" class="combo combo_side_by_side"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="215" y="99" height="18" width="18.0" class="combo combo_side_by_side tap glyph mdi:bluetooth"/>
+<text x="224" y="100" class="combo combo_side_by_side shifted">x</text>
 </g>
 <g class="combo combopos-4">
 <path d="M561,84 v-50 a6.0,6.0 0 0 0 -6.0,-6.0 h-4" class="combo"/>
@@ -728,10 +729,10 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:arrow-up" xlink:href="#mdi:arrow-up" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:arrow-up"/>
 </g>
-<g transform="translate(588, 46)" class="key sym_by_sym keypos-8">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:console-line"/>
-<use href="#mdi:arrow-up" xlink:href="#mdi:arrow-up" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-up"/>
+<g transform="translate(588, 46)" class="key side_by_side keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:console-line"/>
+<use href="#mdi:arrow-up" xlink:href="#mdi:arrow-up" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-up"/>
 </g>
 <g transform="translate(644, 81)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -800,20 +801,20 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">PgDn</text>
 </g>
-<g transform="translate(532, 140)" class="key sym_by_sym keypos-27">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:console-line"/>
-<use href="#mdi:script-outline" xlink:href="#mdi:script-outline" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:script-outline"/>
+<g transform="translate(532, 140)" class="key side_by_side keypos-27">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:console-line"/>
+<use href="#mdi:script-outline" xlink:href="#mdi:script-outline" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:script-outline"/>
 </g>
-<g transform="translate(588, 158)" class="key sym_by_sym keypos-28">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:console-line"/>
-<use href="#mdi:arrow-down" xlink:href="#mdi:arrow-down" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-down"/>
+<g transform="translate(588, 158)" class="key side_by_side keypos-28">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:console-line"/>
+<use href="#mdi:arrow-down" xlink:href="#mdi:arrow-down" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-down"/>
 </g>
-<g transform="translate(644, 193)" class="key sym_by_sym keypos-29">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:console-line"/>
-<use href="#mdi:arrow-collapse-down" xlink:href="#mdi:arrow-collapse-down" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-collapse-down"/>
+<g transform="translate(644, 193)" class="key side_by_side keypos-29">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:console-line" xlink:href="#mdi:console-line" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:console-line"/>
+<use href="#mdi:arrow-collapse-down" xlink:href="#mdi:arrow-collapse-down" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-collapse-down"/>
 </g>
 <g transform="translate(221, 221) rotate(15.0)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -839,20 +840,20 @@ path.combo {
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(84, 46)" class="key sym_sub_text keypos-1">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">7</text>
+<g transform="translate(84, 46)" class="key side_by_side keypos-1">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">7</text>
 </g>
-<g transform="translate(140, 28)" class="key sym_sub_text keypos-2">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">8</text>
+<g transform="translate(140, 28)" class="key side_by_side keypos-2">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">8</text>
 </g>
-<g transform="translate(196, 44)" class="key sym_sub_text keypos-3">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">9</text>
+<g transform="translate(196, 44)" class="key side_by_side keypos-3">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">9</text>
 </g>
 <g transform="translate(252, 52)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -860,20 +861,20 @@ path.combo {
 <g transform="translate(420, 52)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(476, 44)" class="key sym_by_sym keypos-6">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:tab"/>
-<use href="#mdi:arrow-left" xlink:href="#mdi:arrow-left" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-left"/>
+<g transform="translate(476, 44)" class="key side_by_side keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:tab"/>
+<use href="#mdi:arrow-left" xlink:href="#mdi:arrow-left" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-left"/>
 </g>
-<g transform="translate(532, 28)" class="key sym_by_sym keypos-7">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:eye"/>
-<use href="#mdi:arrow-up" xlink:href="#mdi:arrow-up" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-up"/>
+<g transform="translate(532, 28)" class="key side_by_side keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<use href="#mdi:arrow-up" xlink:href="#mdi:arrow-up" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-up"/>
 </g>
-<g transform="translate(588, 46)" class="key sym_by_sym keypos-8">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:tab"/>
-<use href="#mdi:arrow-right" xlink:href="#mdi:arrow-right" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-right"/>
+<g transform="translate(588, 46)" class="key side_by_side keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:tab"/>
+<use href="#mdi:arrow-right" xlink:href="#mdi:arrow-right" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-right"/>
 </g>
 <g transform="translate(644, 81)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -881,20 +882,20 @@ path.combo {
 <g transform="translate(28, 137)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(84, 102)" class="key sym_sub_text keypos-11">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">4</text>
+<g transform="translate(84, 102)" class="key side_by_side keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">4</text>
 </g>
-<g transform="translate(140, 84)" class="key sym_sub_text keypos-12">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">5</text>
+<g transform="translate(140, 84)" class="key side_by_side keypos-12">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">5</text>
 </g>
-<g transform="translate(196, 100)" class="key sym_sub_text keypos-13">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">6</text>
+<g transform="translate(196, 100)" class="key side_by_side keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">6</text>
 </g>
 <g transform="translate(252, 108)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -902,20 +903,20 @@ path.combo {
 <g transform="translate(420, 108)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(476, 100)" class="key sym_by_sym keypos-16">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:eye"/>
-<use href="#mdi:arrow-left" xlink:href="#mdi:arrow-left" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-left"/>
+<g transform="translate(476, 100)" class="key side_by_side keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<use href="#mdi:arrow-left" xlink:href="#mdi:arrow-left" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-left"/>
 </g>
-<g transform="translate(532, 84)" class="key sym_by_sym keypos-17">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:eye"/>
-<use href="#mdi:arrow-down" xlink:href="#mdi:arrow-down" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-down"/>
+<g transform="translate(532, 84)" class="key side_by_side keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<use href="#mdi:arrow-down" xlink:href="#mdi:arrow-down" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-down"/>
 </g>
-<g transform="translate(588, 102)" class="key sym_by_sym keypos-18">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:eye"/>
-<use href="#mdi:arrow-right" xlink:href="#mdi:arrow-right" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-right"/>
+<g transform="translate(588, 102)" class="key side_by_side keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<use href="#mdi:arrow-right" xlink:href="#mdi:arrow-right" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-right"/>
 </g>
 <g transform="translate(644, 137)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -923,20 +924,20 @@ path.combo {
 <g transform="translate(28, 193)" class="key keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(84, 158)" class="key sym_sub_text keypos-21">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">1</text>
+<g transform="translate(84, 158)" class="key side_by_side keypos-21">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">1</text>
 </g>
-<g transform="translate(140, 140)" class="key sym_sub_text keypos-22">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">2</text>
+<g transform="translate(140, 140)" class="key side_by_side keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">2</text>
 </g>
-<g transform="translate(196, 156)" class="key sym_sub_text keypos-23">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:eye"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">3</text>
+<g transform="translate(196, 156)" class="key side_by_side keypos-23">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:eye" xlink:href="#mdi:eye" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:eye"/>
+<text x="0" y="-24" class="key side_by_side shifted">3</text>
 </g>
 <g transform="translate(252, 164)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -966,8 +967,10 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(451, 221) rotate(-15.0)" class="key keypos-33">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<g transform="translate(451, 221) rotate(-15.0)" class="key side_by_side keypos-33">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:apple-keyboard-shift"/>
+<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:keyboard-return"/>
 </g>
 </g>
 </g>
@@ -977,20 +980,20 @@ path.combo {
 <g transform="translate(28, 81)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(84, 46)" class="key sym_sub_text keypos-1">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">7</text>
+<g transform="translate(84, 46)" class="key side_by_side keypos-1">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">7</text>
 </g>
-<g transform="translate(140, 28)" class="key sym_sub_text keypos-2">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">8</text>
+<g transform="translate(140, 28)" class="key side_by_side keypos-2">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">8</text>
 </g>
-<g transform="translate(196, 44)" class="key sym_sub_text keypos-3">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">9</text>
+<g transform="translate(196, 44)" class="key side_by_side keypos-3">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">9</text>
 </g>
 <g transform="translate(252, 52)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -998,20 +1001,20 @@ path.combo {
 <g transform="translate(420, 52)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(476, 44)" class="key sym_by_sym keypos-6">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:tab"/>
-<use href="#mdi:chevron-double-left" xlink:href="#mdi:chevron-double-left" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:chevron-double-left"/>
+<g transform="translate(476, 44)" class="key side_by_side keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:tab"/>
+<use href="#mdi:chevron-double-left" xlink:href="#mdi:chevron-double-left" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:chevron-double-left"/>
 </g>
-<g transform="translate(532, 28)" class="key sym_by_sym keypos-7">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:application-outline"/>
-<use href="#mdi:arrow-up" xlink:href="#mdi:arrow-up" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-up"/>
+<g transform="translate(532, 28)" class="key side_by_side keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<use href="#mdi:arrow-up" xlink:href="#mdi:arrow-up" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-up"/>
 </g>
-<g transform="translate(588, 46)" class="key sym_by_sym keypos-8">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:tab"/>
-<use href="#mdi:chevron-double-right" xlink:href="#mdi:chevron-double-right" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:chevron-double-right"/>
+<g transform="translate(588, 46)" class="key side_by_side keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:tab" xlink:href="#mdi:tab" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:tab"/>
+<use href="#mdi:chevron-double-right" xlink:href="#mdi:chevron-double-right" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:chevron-double-right"/>
 </g>
 <g transform="translate(644, 81)" class="key keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1019,20 +1022,20 @@ path.combo {
 <g transform="translate(28, 137)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(84, 102)" class="key sym_sub_text keypos-11">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">4</text>
+<g transform="translate(84, 102)" class="key side_by_side keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">4</text>
 </g>
-<g transform="translate(140, 84)" class="key sym_sub_text keypos-12">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">5</text>
+<g transform="translate(140, 84)" class="key side_by_side keypos-12">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">5</text>
 </g>
-<g transform="translate(196, 100)" class="key sym_sub_text keypos-13">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">6</text>
+<g transform="translate(196, 100)" class="key side_by_side keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">6</text>
 </g>
 <g transform="translate(252, 108)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1040,20 +1043,20 @@ path.combo {
 <g transform="translate(420, 108)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(476, 100)" class="key sym_by_sym keypos-16">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:application-outline"/>
-<use href="#mdi:arrow-left" xlink:href="#mdi:arrow-left" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-left"/>
+<g transform="translate(476, 100)" class="key side_by_side keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<use href="#mdi:arrow-left" xlink:href="#mdi:arrow-left" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-left"/>
 </g>
-<g transform="translate(532, 84)" class="key sym_by_sym keypos-17">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:application-outline"/>
-<use href="#mdi:arrow-down" xlink:href="#mdi:arrow-down" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-down"/>
+<g transform="translate(532, 84)" class="key side_by_side keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<use href="#mdi:arrow-down" xlink:href="#mdi:arrow-down" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-down"/>
 </g>
-<g transform="translate(588, 102)" class="key sym_by_sym keypos-18">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_by_sym tap glyph mdi:application-outline"/>
-<use href="#mdi:arrow-right" xlink:href="#mdi:arrow-right" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:arrow-right"/>
+<g transform="translate(588, 102)" class="key side_by_side keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<use href="#mdi:arrow-right" xlink:href="#mdi:arrow-right" x="-8" y="-24" height="15" width="15.0" class="key side_by_side shifted glyph mdi:arrow-right"/>
 </g>
 <g transform="translate(644, 137)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1061,20 +1064,20 @@ path.combo {
 <g transform="translate(28, 193)" class="key keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(84, 158)" class="key sym_sub_text keypos-21">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">1</text>
+<g transform="translate(84, 158)" class="key side_by_side keypos-21">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">1</text>
 </g>
-<g transform="translate(140, 140)" class="key sym_sub_text keypos-22">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">2</text>
+<g transform="translate(140, 140)" class="key side_by_side keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">2</text>
 </g>
-<g transform="translate(196, 156)" class="key sym_sub_text keypos-23">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text"/>
-<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:application-outline"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">3</text>
+<g transform="translate(196, 156)" class="key side_by_side keypos-23">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side_by_side"/>
+<use href="#mdi:application-outline" xlink:href="#mdi:application-outline" x="-9" y="-9" height="18" width="18.0" class="key side_by_side tap glyph mdi:application-outline"/>
+<text x="0" y="-24" class="key side_by_side shifted">3</text>
 </g>
 <g transform="translate(252, 164)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

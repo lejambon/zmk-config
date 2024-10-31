@@ -14,6 +14,7 @@
 #undef UNDO
 
 #define KP(k)       &kp k
+#define SHFT_ENTER  &kp LS(ENTER)
 #define HL(a,b,c,d) &hrl LCTRL a &hrl LALT b &hrl LGUI c &hrl LSHFT d
 #define HR(a,b,c,d) &hrr RSHFT a &hrr RGUI b &hrr RALT c &hrr RCTRL d
 #define L_A(t)      &lt 1 t
@@ -166,6 +167,11 @@
                 , <&macro_tap &kp U>
                 ;
         };
+        dot_dot_slash: dot-dot-slash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp DOT &kp FSLH>;
+        };
     };
 
     combos {
@@ -180,6 +186,12 @@
             timeout-ms = <100>;
             key-positions = <1 2>;
             bindings = <&kp Z>;
+            layers = <BASE>;
+        };
+        combo_dot_dot_slash {
+            timeout-ms = <100>;
+            key-positions = <6 7>;
+            bindings = <&dot_dot_slash>;
             layers = <BASE>;
         };
         combo_boot_l {
@@ -244,7 +256,7 @@
         base {
             display-name = "base";
             bindings = <
-                KP(J)       KP(G)       KP(M)       KP(P)       KP(V)           KP(GRAVE)   KP(DOT)     KP(FSLH)    KP(TILDE)   KP(DQT)
+                KP(J)       KP(G)       KP(M)       KP(P)       KP(V)           KP(AT)      KP(DOT)     KP(FSLH)    KP(DQT)     KP(GRAVE)
                 HL(R,          S,          N,          D)       KP(B)           KP(COMMA)   HR(A,          E,          I,          H)
                 KP(X)       KP(F)       KP(L)       KP(C)       KP(W)           KP(MINUS)   KP(U)       KP(O)       KP(Y)       KP(K)
                                                     L_F(TAB)    L_A(T)          L_N(SPACE)  KP(ENTER)
@@ -253,7 +265,6 @@
 
         // sym
         // linux test
-        // shift enter
         // wm resize
         // wm preset tile
         action {
@@ -282,11 +293,10 @@
                 xxxxx       WF(N7)      WF(N8)      WF(N9)      xxxxx           xxxxx       TAB_FL      WF(UP)      TAB_FR      xxxxx
                 xxxxx       WF(N4)      WF(N5)      WF(N6)      xxxxx           xxxxx       WF(LEFT)    WF(DOWN)    WF(RIGHT)   xxxxx
                 xxxxx       WF(N1)      WF(N2)      WF(N3)      xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                                                    _____       xxxxx           _____       xxxxx
+                                                    _____       xxxxx           _____       SHFT_ENTER
             >;
         };
 
-        // focus + num-nav
         move {
             display-name = "move";
             bindings = <
@@ -297,8 +307,8 @@
             >;
         };
 
-        // action + num-nav
         // !"£$%^&*()[]{}<>-=_+;:'@#~\|`,./?
+        // " - ` @ ~/ ../ / . ,
         sym {
             display-name = "sym";
             bindings = <

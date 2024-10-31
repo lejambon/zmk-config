@@ -7,7 +7,7 @@ parse_config:
     '&kp LG(LS(V))':
       tap: $$mdi:content-paste$$
       shifted: $$mdi:star$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(Z)': $$mdi:undo$$
     '&kp LG(LS(Z))': $$mdi:redo$$  
     '&kp LC(LG(Q))': $$mdi:lock-outline$$
@@ -16,191 +16,191 @@ parse_config:
     '&kp LA(N1)':
       tap: $$mdi:eye$$
       shifted: '1'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(N2)':
       tap: $$mdi:eye$$
       shifted: '2'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(N3)':
       tap: $$mdi:eye$$
       shifted: '3'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(N4)':
       tap: $$mdi:eye$$
       shifted: '4'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(N5)':
       tap: $$mdi:eye$$
       shifted: '5'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(N6)':
       tap: $$mdi:eye$$
       shifted: '6'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(N7)':
       tap: $$mdi:eye$$
       shifted: '7'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(N8)':
       tap: $$mdi:eye$$
       shifted: '8'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(N9)':
       tap: $$mdi:eye$$
       shifted: '9'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(UP)':
       tap: $$mdi:eye$$
       shifted: $$mdi:arrow-up$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LA(DOWN)':
       tap: $$mdi:eye$$
       shifted: $$mdi:arrow-down$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LA(LEFT)':
       tap: $$mdi:eye$$
       shifted: $$mdi:arrow-left$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LA(RIGHT)':
       tap: $$mdi:eye$$
       shifted: $$mdi:arrow-right$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LA(LS(N1))':
       tap: $$mdi:application-outline$$
       shifted: '1'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(N2))':
       tap: $$mdi:application-outline$$
       shifted: '2'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(N3))':
       tap: $$mdi:application-outline$$
       shifted: '3'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(N4))':
       tap: $$mdi:application-outline$$
       shifted: '4'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(N5))':
       tap: $$mdi:application-outline$$
       shifted: '5'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(N6))':
       tap: $$mdi:application-outline$$
       shifted: '6'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(N7))':
       tap: $$mdi:application-outline$$
       shifted: '7'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(N8))':
       tap: $$mdi:application-outline$$
       shifted: '8'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(N9))':
       tap: $$mdi:application-outline$$
       shifted: '9'
-      type: sym_sub_text
+      type: side_by_side
     '&kp LA(LS(UP))':
       tap: $$mdi:application-outline$$
       shifted: $$mdi:arrow-up$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LA(LS(DOWN))':
       tap: $$mdi:application-outline$$
       shifted: $$mdi:arrow-down$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LA(LS(LEFT))':
       tap: $$mdi:application-outline$$
       shifted: $$mdi:arrow-left$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LA(LS(RIGHT))':
       tap: $$mdi:application-outline$$
       shifted: $$mdi:arrow-right$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(T)': $$mdi:tab-plus$$
     '&kp LG(W)': $$mdi:tab-remove$$
     '&kp LG(LA(LEFT))':
       tap: $$mdi:tab$$
       shifted: $$mdi:arrow-left$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(LA(RIGHT))':
       tap: $$mdi:tab$$
       shifted: $$mdi:arrow-right$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LS(PGUP))':
       tap: $$mdi:tab$$
       shifted: $$mdi:chevron-double-left$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LS(PGDN))':
       tap: $$mdi:tab$$
       shifted: $$mdi:chevron-double-right$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LA(LG(W))':
       tap: $$mdi:application-outline$$
       shifted: $$mdi:close$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LA(LS(W)))':
       tap: $$mdi:google-chrome$$
       shifted: $$mdi:plus$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(LEFT)':
       tap: $$mdi:google-chrome$$
       shifted: $$mdi:step-backward$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(RIGHT)':
       tap: $$mdi:google-chrome$$
       shifted: $$mdi:step-forward$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(LS(R))':
       tap: $$mdi:google-chrome$$
       shifted: $$mdi:reload$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(I)':
       tap: $$mdi:google-chrome$$
       shifted: $$mdi:cloud-search-outline$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(LS(N))':
       tap: $$mdi:google-chrome$$
       shifted: $$mdi:incognito$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LG(LS(T))':
       tap: $$mdi:tab$$
       shifted: $$mdi:undo$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LA(LS(T)))':
       tap: $$mdi:console-line$$
       shifted: $$mdi:plus$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LS(C))':
       tap: $$mdi:console-line$$
       shifted: $$mdi:content-copy$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LS(COMMA))':
       tap: $$mdi:console-line$$
       shifted: $$mdi:arrow-up$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LS(DOT))':
       tap: $$mdi:console-line$$
       shifted: $$mdi:arrow-down$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LS(END))':
       tap: $$mdi:console-line$$
       shifted: $$mdi:arrow-collapse-down$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LS(H))':
       tap: $$mdi:console-line$$
       shifted: $$mdi:script-outline$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LA(LS(H)))':
       tap: $$mdi:phone$$
       shifted: $$mdi:hand-back-left-outline$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LA(LS(V)))':
       tap: $$mdi:phone$$
       shifted: $$mdi:video-off-outline$$
-      type: sym_by_sym
+      type: side_by_side
     '&kp LC(LA(LS(A)))':
       tap: $$mdi:phone$$
       shifted: $$mdi:microphone-off$$
-      type: sym_by_sym
+      type: side_by_side
   zmk_preamble: '#define KEYMAP_OS_MAC'
