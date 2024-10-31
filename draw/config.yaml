@@ -4,26 +4,52 @@ parse_config:
     '&reset': $$mdi:restart$$
     '&bt BT_CLR':
       tap: $$mdi:bluetooth$$
-      shifted: $$mdi:close$$
-      type: sym_sub_text
+      shifted: 'x' # $$mdi:close$$
+      type: combo_sym_by_sym
     '&bt BT_SEL 0':
       tap: $$mdi:bluetooth$$
       shifted: '0'
-      type: sym_sub_text
+      type: combo_sym_by_sym
     '&bt BT_SEL 1':
       tap: $$mdi:bluetooth$$
       shifted: '1'
-      type: sym_sub_text
+      type: combo_sym_by_sym
     '&bt BT_SEL 2':
       tap: $$mdi:bluetooth$$
       shifted: '2'
-      type: sym_sub_text
+      type: combo_sym_by_sym
   zmk_combos:
     combo_q:
       key:
-        tap: 'Qu'
-        hold: "Q"
-      type: combo_hold_tap
+        tap: 'Q'
+        #tap: 'Qu'
+        #hold: "Q"
+      #type: combo_hold_tap
+    combo_boot_l:
+      align: left
+    combo_boot_r:
+      align: right
+    combo_blu_0:
+      align: left
+      offset: -0.02
+    combo_blu_1:
+      align: left
+      offset: -0.02
+    combo_blu_2:
+      align: left
+      offset: -0.02
+    combo_blu_clr:
+      align: left
+      offset: -0.02
+    combo_power:
+      align: right
+      #offset: -0.02
+    combo_sleep:
+      align: right
+      #offset: -0.02
+    combo_lock:
+      align: right
+      #offset: -0.02
   zmk_keycode_map:
     AMPS: '&'
     AT: '@'
@@ -92,8 +118,8 @@ parse_config:
     RCTRL: $$mdi:apple-keyboard-control$$
 draw_config:
   append_colon_to_layer_header: false
-  combo_w: 34
-  combo_h: 34
+  combo_w: 20
+  combo_h: 20
   dark_mode: auto
   glyph_tap_size: 18
   glyph_hold_size: 15
@@ -106,21 +132,53 @@ draw_config:
     .sym_sub_text.shifted {
       translate: 10px 13px;
       font-size: 16px;
-      opacity: 1.0;
     }
+
     .sym_by_sym.tap {
       translate: -6px 0px;
     }
     .sym_by_sym.shifted {
       translate: 10px 12px;
-      opacity: 1.0;
     }
-    .combo_hold_tap.tap {
-      translate: 0px -6px;
+
+    /* home row */
+    .key.hold.glyph {
+      fill: #f6bc66;
     }
-    .combo_hold_tap.hold {
-      translate: 0px -4px;
+    
+    /* layer name */
+    text.layer-activator {
+      fill: #ea9ab2;
+      text-decoration: none;
     }
-    text.combo.hold {
-      font-size: 11px;
+
+    /* layer held */
+    rect.held {
+      fill: #ea9ab2;
+    }
+
+    /* Q/Z */
+    text.combo.tap {
+      font-size: 16px;
+    }
+
+    /* Blu */
+    .combo_sym_by_sym.tap {
+      translate: -3px 0px;
+    }
+    .combo_sym_by_sym.shifted {
+      translate: 5px 2px;
+    }
+    text.combo.combo_sym_by_sym.shifted {
+      font-size: 14px;
+    }
+
+    /* combo color */
+    rect.combo {
+      fill: #79addc;
+    }
+    /* combo dendrons */
+    path.combo {
+      stroke: #79addc;
+      stroke-width: 2;
     }

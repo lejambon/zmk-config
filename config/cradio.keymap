@@ -14,7 +14,6 @@
 #undef UNDO
 
 #define KP(k)       &kp k
-#define FN(num)     &ht_fn F##num N##num
 #define HL(a,b,c,d) &hrl LCTRL a &hrl LALT b &hrl LGUI c &hrl LSHFT d
 #define HR(a,b,c,d) &hrr RSHFT a &hrr RGUI b &hrr RALT c &hrr RCTRL d
 #define L_A(t)      &lt 1 t
@@ -155,14 +154,6 @@
             quick-tap-ms = <QUICK_TAP>;
             bindings = <&kp>, <&macro_qu>;
         };
-        ht_fn: hold-tap-fn {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <400>;
-            quick-tap-ms = <QUICK_TAP>;
-            bindings = <&kp>, <&kp>;
-        };
     };
 
     macros {
@@ -191,30 +182,60 @@
             bindings = <&kp Z>;
             layers = <BASE>;
         };
-/*        combo_blu_0 {
+        combo_boot_l {
+            timeout-ms = <50>;
+            key-positions = <0 20>;
+            bindings = <&bootloader>;
+            layers = <BASE>;
+        };
+        combo_boot_r {
+            timeout-ms = <50>;
+            key-positions = <9 29>;
+            bindings = <&bootloader>;
+            layers = <BASE>;
+        };
+        combo_blu_0 {
             timeout-ms = <100>;
-            key-positions = <21 22>;
+            key-positions = <1 21>;
             bindings = <&bt BT_SEL 0>;
-            layers = <NUM_NAV>;
+            layers = <ACTION>;
         };
         combo_blu_1 {
             timeout-ms = <100>;
-            key-positions = <22 23>;
-            bindings = <&bt BT_SEL 0>;
-            layers = <NUM_NAV>;
+            key-positions = <2 22>;
+            bindings = <&bt BT_SEL 1>;
+            layers = <ACTION>;
         };
         combo_blu_2 {
             timeout-ms = <100>;
-            key-positions = <23 24>;
-            bindings = <&bt BT_SEL 0>;
-            layers = <NUM_NAV>;
+            key-positions = <3 23>;
+            bindings = <&bt BT_SEL 2>;
+            layers = <ACTION>;
         };
         combo_blu_clr {
             timeout-ms = <100>;
-            key-positions = <24 25>;
+            key-positions = <4 24>;
             bindings = <&bt BT_CLR>;
-            layers = <NUM_NAV>;
-        };*/
+            layers = <ACTION>;
+        };
+        combo_power {
+            timeout-ms = <50>;
+            key-positions = <7 27>;
+            bindings = <POWER>;
+            layers = <ACTION>;
+        };
+        combo_sleep {
+            timeout-ms = <50>;
+            key-positions = <8 28>;
+            bindings = <SLEEP>;
+            layers = <ACTION>;
+        };
+        combo_lock {
+            timeout-ms = <50>;
+            key-positions = <9 29>;
+            bindings = <LOCK>;
+            layers = <ACTION>;
+        };
     };
 
     keymap {
@@ -231,17 +252,10 @@
         };
 
         // sym
-        // proper test
+        // linux test
         // shift enter
-        // lock/power/sleep
-        // bluetooth
         // wm resize
         // wm preset tile
-
-        // add kitty to linux+config
-        // kitty mac config
-        // zoom config
-        // open apps config
         action {
             display-name = "action";
             bindings = <
@@ -288,9 +302,9 @@
         sym {
             display-name = "sym";
             bindings = <
-                BOOT        BT(SEL 0)   BT(SEL 1)   BT(SEL 2)   BT(CLR)         LOCK        xxxxx       xxxxx       xxxxx       xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           SLEEP       xxxxx       xxxxx       xxxxx       xxxxx
-                KP(N5)      xxxxx       xxxxx       xxxxx       xxxxx           POWER       xxxxx       xxxxx       xxxxx       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                KP(N5)      xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
                                                     xxxxx       _____           _____       xxxxx
             >;
         };
