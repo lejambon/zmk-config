@@ -1,6 +1,6 @@
 ## Keymap
 
-![](./draw/svg/cradio_linux.svg)
+![](./draw/svg/cradio_mac.svg)
 
 ## Commands
 
