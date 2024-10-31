@@ -300,7 +300,7 @@ path.combo { stroke: #7f7f7f; }
 
 /* home row */
 .key.hold.glyph {
-  fill: #f6bc66;
+  fill: #ea9ab2;
 }
 
 /* layer name */
@@ -319,7 +319,7 @@ text.combo.tap {
   font-size: 16px;
 }
 
-/* Blu */
+/* bluetooth */
 .combo_sym_by_sym.tap {
   translate: -3px 0px;
 }

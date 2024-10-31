@@ -143,7 +143,7 @@ draw_config:
 
     /* home row */
     .key.hold.glyph {
-      fill: #f6bc66;
+      fill: #ea9ab2;
     }
     
     /* layer name */
@@ -162,7 +162,7 @@ draw_config:
       font-size: 16px;
     }
 
-    /* Blu */
+    /* bluetooth */
     .combo_sym_by_sym.tap {
       translate: -3px 0px;
     }
