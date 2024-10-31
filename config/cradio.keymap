@@ -80,9 +80,9 @@
     #define WF(k)       &kp LA(k)
     #define WM(k)       &kp LA(LS(k))
     #define SCRSHOT     &kp PSCRN
-    #define ZOOM_HAND   &kp LA(Y)
-    #define ZOOM_VID    &kp LG(LS(S))
-    #define ZOOM_MUTE   &kp LG(LS(A))
+    #define ZOOM_HAND   &kp LC(LA(LS(H)))
+    #define ZOOM_VID    &kp LC(LA(LS(V)))
+    #define ZOOM_MUTE   &kp LC(LA(LS(A)))
     #define TTY_OPEN    &kp LC(LA(LS(T)))
     #define TTY_COPY    &kp LC(LS(C))
     #define TTY_END     &kp LC(LS(END))
@@ -230,16 +230,8 @@
             >;
         };
 
-        //base    0 0    0   0
-        //func     0 1    0   1
-        //num/nav 0 0    1   2
-        //wm-focus   1 0    0   3
-        //wm-move    1 0    1   2+3
-        //sym     0 1    1   1+2
-
-        // commit
-        // flash/test
         // sym
+        // proper test
         // shift enter
         // lock/power/sleep
         // bluetooth
@@ -280,6 +272,7 @@
             >;
         };
 
+        // focus + num-nav
         move {
             display-name = "move";
             bindings = <
@@ -290,6 +283,7 @@
             >;
         };
 
+        // action + num-nav
         // !"£$%^&*()[]{}<>-=_+;:'@#~\|`,./?
         sym {
             display-name = "sym";

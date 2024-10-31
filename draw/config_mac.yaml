@@ -191,15 +191,15 @@ parse_config:
       tap: $$mdi:console-line$$
       shifted: $$mdi:script-outline$$
       type: sym_by_sym
-    '&kp LA(Y)':
+    '&kp LC(LA(LS(H)))':
       tap: $$mdi:phone$$
       shifted: $$mdi:hand-back-left-outline$$
       type: sym_by_sym
-    '&kp LG(LS(S))':
+    '&kp LC(LA(LS(V)))':
       tap: $$mdi:phone$$
       shifted: $$mdi:video-off-outline$$
       type: sym_by_sym
-    '&kp LG(LS(A))':
+    '&kp LC(LA(LS(A)))':
       tap: $$mdi:phone$$
       shifted: $$mdi:microphone-off$$
       type: sym_by_sym
