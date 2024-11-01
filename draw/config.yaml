@@ -98,7 +98,7 @@ parse_config:
     END: 'End'
     INS: 'Ins'
     ESC: 'Esc'
-    
+
     UP: $$mdi:arrow-up$$
     DOWN: $$mdi:arrow-down$$
     LEFT: $$mdi:arrow-left$$
@@ -127,38 +127,16 @@ draw_config:
   glyph_hold_size: 15
   glyph_shifted_size: 15
   svg_extra_style: |
+    text.layer-activator {
+      text-decoration: none;
+    }
+
     .side_by_side.tap {
       translate: -9px 0px;
     }
     .side_by_side.shifted {
       translate: 10px 17px;
       font-size: 16px;
-    }
-
-    /* home row */
-    .key.hold.glyph {
-      fill: #ea9ab2;
-    }
-    
-    /* layer name */
-    text.layer-activator {
-      fill: #ea9ab2;
-      text-decoration: none;
-    }
-
-    /* layer held */
-    rect.held {
-      fill: #ea9ab2;
-    }
-
-    /* Q/Z */
-    text.combo.tap {
-      font-size: 16px;
-    }
-
-    /* ../ */
-    text.combo.combo_small.tap {
-      font-size: 10px;
     }
 
     /* bluetooth */
@@ -172,12 +150,23 @@ draw_config:
       font-size: 14px;
     }
 
-    /* combo color */
-    rect.combo {
-      fill: #008ff8;
+    /* Q/Z */
+    text.combo.tap {
+      font-size: 16px;
     }
+
+    /* ../ */
+    text.combo.combo_small.tap {
+      font-size: 10px;
+    }
+
     /* combo dendrons */
     path.combo {
-      stroke: #008ff8;
       stroke-width: 2;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      rect.key.hold.glyph, rect.held, text.layer-activator { fill: #ea9ab2; }
+      rect.combo { fill: #008ff8; }
+      path.combo { stroke: #008ff8; }
     }

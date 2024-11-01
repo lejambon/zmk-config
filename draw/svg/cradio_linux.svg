@@ -270,28 +270,8 @@ text.trans { fill: #7e8184; }
 path.combo { stroke: #7f7f7f; }
 
 }
-.side_by_side.tap {
-  translate: -9px 0px;
-}
-.side_by_side.shifted {
-  translate: 10px 17px;
-  font-size: 16px;
-}
-
-/* home row */
-.key.hold.glyph {
-  fill: #ea9ab2;
-}
-
-/* layer name */
 text.layer-activator {
-  fill: #ea9ab2;
   text-decoration: none;
-}
-
-/* layer held */
-rect.held {
-  fill: #ea9ab2;
 }
 
 /* Q/Z */
@@ -302,6 +282,14 @@ text.combo.tap {
 /* ../ */
 text.combo.combo_small.tap {
   font-size: 10px;
+}
+
+.side_by_side.tap {
+  translate: -9px 0px;
+}
+.side_by_side.shifted {
+  translate: 10px 17px;
+  font-size: 16px;
 }
 
 /* bluetooth */
@@ -315,14 +303,15 @@ text.combo.combo_side_by_side.shifted {
   font-size: 14px;
 }
 
-/* combo color */
-rect.combo {
-  fill: #008ff8;
-}
 /* combo dendrons */
 path.combo {
-  stroke: #008ff8;
   stroke-width: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  rect.key.hold.glyph, rect.held, text.layer-activator { fill: #ea9ab2; }
+  rect.combo { fill: #008ff8; }
+  path.combo { stroke: #008ff8; }
 }
 </style>
 <g transform="translate(30, 0)" class="layer-base">
