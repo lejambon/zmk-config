@@ -9,10 +9,10 @@
 #define MOVE    4
 #define SYM     5
 
-#@draw-yq .layers.action[3][2].h = "sym"
-#@draw-yq .layers."num-nav"[3][1].h = "sym"
-#@draw-yq .layers.focus[3][2].h = "move"
-#@draw-yq .layers."num-nav"[3][0].h = "move"
+// @draw-yq .layers.action[3][2].h = "sym"
+// @draw-yq .layers."num-nav"[3][1].h = "sym"
+// @draw-yq .layers.focus[3][2].h = "move"
+// @draw-yq .layers."num-nav"[3][0].h = "move"
 
 #undef CUT
 #undef COPY
@@ -20,6 +20,7 @@
 
 #define KP(k)       &kp k
 #define SHFT_ENTER  &kp LS(ENTER)
+#define TGRAVE      &ht_grave 0 GRAVE
 #define HL(a,b,c,d) &hrl LCTRL a &hrl LALT b &hrl LGUI c &hrl LSHFT d
 #define HR(a,b,c,d) &hrr RSHFT a &hrr RGUI b &hrr RALT c &hrr RCTRL d
 #define L_A(t)      &lt 1 t
@@ -160,6 +161,14 @@
             quick-tap-ms = <QUICK_TAP>;
             bindings = <&kp>, <&macro_qu>;
         };
+        ht_grave: hold-tap-grave {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP>;
+            bindings = <&macro_triple_grave>, <&kp>;
+        };
     };
 
     macros {
@@ -172,10 +181,20 @@
                 , <&macro_tap &kp U>
                 ;
         };
+        macro_triple_grave: macro-triple-grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+        };
         dot_dot_slash: dot-dot-slash {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp DOT &kp DOT &kp FSLH>;
+        };
+        tilde_slash: tilde-slash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp FSLH>;
         };
     };
 
@@ -197,6 +216,12 @@
             timeout-ms = <100>;
             key-positions = <6 7>;
             bindings = <&dot_dot_slash>;
+            layers = <BASE>;
+        };
+        combo_tilde_slash {
+            timeout-ms = <100>;
+            key-positions = <7 8>;
+            bindings = <&tilde_slash>;
             layers = <BASE>;
         };
         combo_boot_l {
@@ -255,23 +280,24 @@
         };
     };
 
+    // TODO:
+    // international
+    // linux test
+    // wm resize
+    // wm preset tile
     keymap {
         compatible = "zmk,keymap";
 
         base {
             display-name = "base";
             bindings = <
-                KP(J)       KP(G)       KP(M)       KP(P)       KP(V)           KP(AT)      KP(DOT)     KP(FSLH)    KP(DQT)     KP(GRAVE)
+                KP(J)       KP(G)       KP(M)       KP(P)       KP(V)           KP(AT)      KP(DOT)     KP(FSLH)    KP(QMARK)      TGRAVE
                 HL(R,          S,          N,          D)       KP(B)           KP(COMMA)   HR(A,          E,          I,          H)
                 KP(X)       KP(F)       KP(L)       KP(C)       KP(W)           KP(MINUS)   KP(U)       KP(O)       KP(Y)       KP(K)
                                                     L_F(TAB)    L_A(T)          L_N(SPACE)  KP(ENTER)
             >;
         };
 
-        // sym
-        // linux test
-        // wm resize
-        // wm preset tile
         action {
             display-name = "action";
             bindings = <
@@ -312,14 +338,12 @@
             >;
         };
 
-        // !"£$%^&*()[]{}<>-=_+;:'@#~\|`,./?
-        // " - ` @ ~/ ../ / . ,
         sym {
             display-name = "sym";
             bindings = <
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                xxxxx       xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
-                KP(N5)      xxxxx       xxxxx       xxxxx       xxxxx           xxxxx       xxxxx       xxxxx       xxxxx       xxxxx
+                xxxxx       KP(STAR)    KP(FSLH)    KP(LBRC)    KP(LT)          KP(GT)      KP(RBRC)    KP(PLUS)    KP(MINUS)   xxxxx
+                HL(HASH,       DLLR,       DQT,        LPAR)    KP(LBKT)        KP(RBKT)    HR(RPAR,       SQT,        AMPS,    PIPE)
+                xxxxx       KP(EXCL)    KP(BSLH)    KP(EQUAL)   KP(PRCNT)       KP(CARET)   KP(UNDER)   KP(SEMI)    KP(COLON)   xxxxx
                                                     xxxxx       _____           _____       xxxxx
             >;
         };

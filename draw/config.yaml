@@ -22,6 +22,9 @@ parse_config:
       tap: $$mdi:apple-keyboard-shift$$
       shifted: $$mdi:keyboard-return$$
       type: side_by_side
+    '&ht_grave 0 GRAVE':
+      tap: '`'
+      hold: '```'
   zmk_combos:
     combo_q:
       key:
@@ -29,6 +32,10 @@ parse_config:
     combo_dot_dot_slash:
       key:
         tap: '../'
+      type: combo_small
+    combo_tilde_slash:
+      key:
+        tap: '~/'
       type: combo_small
     combo_boot_l:
       align: left
@@ -166,7 +173,7 @@ draw_config:
     }
 
     @media (prefers-color-scheme: dark) {
-      rect.key.hold.glyph, rect.held, text.layer-activator { fill: #ea9ab2; }
+      .key.hold.glyph, rect.held, text.key.hold, text.layer-activator { fill: #ea9ab2; }
       rect.combo { fill: #008ff8; }
       path.combo { stroke: #008ff8; }
     }

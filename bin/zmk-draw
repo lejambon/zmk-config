@@ -18,8 +18,8 @@ for km_file in ./config/*.keymap; do
 		echo "-> ${yaml}"
 		keymap -c "${cfg}" parse -c 10 -z "${km_file}" > "${yaml}"
 
-		if grep -q '^#@draw-yq ' "${km_file}"; then
-			grep '^#@draw-yq ' "${km_file}"  | cut -d ' ' -f2- | while read yq_mod; do
+		if grep -q '^// @draw-yq ' "${km_file}"; then
+			grep '^// @draw-yq ' "${km_file}"  | cut -d ' ' -f3- | while read yq_mod; do
 				yq -i -y "${yq_mod}" "${yaml}"
 			done
 		fi
