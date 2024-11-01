@@ -9,6 +9,11 @@
 #define MOVE    4
 #define SYM     5
 
+#@draw-yq .layers.action[3][2].h = "sym"
+#@draw-yq .layers."num-nav"[3][1].h = "sym"
+#@draw-yq .layers.focus[3][2].h = "move"
+#@draw-yq .layers."num-nav"[3][0].h = "move"
+
 #undef CUT
 #undef COPY
 #undef UNDO
